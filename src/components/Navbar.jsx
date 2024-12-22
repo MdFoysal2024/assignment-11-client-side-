@@ -4,6 +4,9 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import { IoPersonCircleOutline } from "react-icons/io5";
 import logo from '../assets/marathon_logo.png'
+
+
+
 const Navbar = () => {
 
 
@@ -38,10 +41,40 @@ const Navbar = () => {
 
 
     const links = <>
-        <li className="tooltip " data-tip="Home"><NavLink to='/'>Home</NavLink></li>
-        <li className="tooltip " data-tip="Home"><NavLink to='/'>Home</NavLink></li>
-        <li className="tooltip " data-tip="Home"><NavLink to='/'>Home</NavLink></li>
-        <li className="tooltip " data-tip="Home"><NavLink to='/'>Home</NavLink></li>
+        <li ><NavLink to='/' style={({ isActive }) => ({ fontWeight: isActive ? "bold" : "normal", color: isActive ? "orangered" : "black", backgroundColor: isActive ? "rgb(248, 248, 240)" : "", textDecoration: isActive ? "underline" :""})}>Home</NavLink></li>
+
+        <li ><NavLink to='/marathons' 
+        style={({ isActive }) => ({ fontWeight: isActive ? "bold" : "normal", color: isActive ? "orangered" : "black", backgroundColor: isActive ? "rgb(248, 248, 240)" : "", textDecoration: isActive ? "underline" :""})}
+        >Marathons</NavLink></li>
+
+        {
+            user && user?.email ?
+                <>
+                    <li className='mx-4'>
+                        <details >
+                            <summary>Dashboard</summary>
+                            <ul className="bg-base-100 w-[180px] rounded-t-none p-2">
+                                
+                                <li ><NavLink to='/add_marathons'
+                                style={({ isActive }) => ({ fontWeight: isActive ? "bold" : "normal", color: isActive ? "orangered" : "black", backgroundColor: isActive ? "rgb(248, 248, 240)" : "", textDecoration: isActive ? "underline" :""})}
+                                >Add Marathons</NavLink></li>
+
+                                <li ><NavLink to='/my_marathon_List'
+                                style={({ isActive }) => ({ fontWeight: isActive ? "bold" : "normal", color: isActive ? "orangered" : "black", backgroundColor: isActive ? "rgb(248, 248, 240)" : "", textDecoration: isActive ? "underline" :""})}
+                                >My Marathon List</NavLink></li>
+
+                                <li ><NavLink to='/my_apply_List'
+                                style={({ isActive }) => ({ fontWeight: isActive ? "bold" : "normal", color: isActive ? "orangered" : "black", backgroundColor: isActive ? "rgb(248, 248, 240)" : "", textDecoration: isActive ? "underline" :""})}
+                                >My Apply List</NavLink></li>
+                               
+                            </ul>
+                        </details>
+                    </li>
+                </>
+                :
+                <> </>
+        }
+
 
 
     </>
@@ -89,15 +122,18 @@ const Navbar = () => {
                         </h2>
                     </a>
                 </div>
-                <div className="navbar-center hidden lg:flex">
+
+                {/* <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        {links}
+                    {links}
                     </ul>
-                </div>
+                </div> */}
 
 
                 <div className="navbar-end ">
-
+                    <ul className="menu hidden text-base lg:flex menu-horizontal px-1">
+                        {links}
+                    </ul>
                     <label className="cursor-pointer mr-6 grid place-items-center">
                         <input
                             onChange={handleToggle}
@@ -117,7 +153,7 @@ const Navbar = () => {
                                     <button className="tooltip tooltip-right" data-tip="User Info" onClick={() => document.getElementById('my_modal_5').showModal()}>
                                         <img className="w-12  mt-2 border-2 border-white rounded-full  " src={user?.photoURL} alt="" />
                                     </button>
-                                    <dialog id="my_modal_5" className="modal modal-top  pl-10 mt-16">
+                                    <dialog id="my_modal_5" className=" modal flex  justify-end  w-[360px] modal-top ">
                                         <div className="bg-white px-8 py-12">
                                             <img className="w-16 mb-6  mx-auto rounded-full" src={user?.photoURL} alt="" />
                                             <h3 className="font-bold text-center text-black text-lg">{user?.displayName}</h3>

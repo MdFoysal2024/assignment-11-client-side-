@@ -14,7 +14,7 @@ import { IoLogoLinkedin } from "react-icons/io";
 
 const Footer = () => {
     return (
-        <div className="bg-[#212b3b]">
+        <div className="bg-[#0c1d35]">
             <footer className="footer w-10/12 mx-auto   py-24 text-white p-10">
                 <div className="grid grid-cols-1   md:grid-cols-2 lg:grid-cols-4 w-full justify-center items-center lg:justify-between text-center">
                     <div>

@@ -2,7 +2,8 @@ import React from 'react';
 
 const Marathons = () => {
     return (
-        <div>
+        <div> 
+            All Marathon Here
             This page displays all created marathons in a 3-column grid layout using cards. Each card will display essential marathon information, such as:
             Marathon Image
             Marathon Title

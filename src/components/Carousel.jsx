@@ -21,42 +21,42 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 const Carousel = () => {
     return (
-        <div className='container px-6 py-10 mx-auto'>
-      <Swiper
-        spaceBetween={30}
-        centeredSlides={true}
-        loop={true}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
-        className='mySwiper'
-      >
-        <SwiperSlide>
-          <Slide
-            image={bg_img1}
-            text='Get Your Web Development Projects Done in minutes'
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Slide
-            image={bg_img2}
-            text='Get Your Graphics Design Projects Done in minutes'
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Slide
-            image={bg_img3}
-            text='Start Your Digital Marketing Campaigns up n running'
-          />
-        </SwiperSlide>
-      </Swiper>
-    </div>
+        <div className='container px-6 mt-24 py-10 mx-auto'>
+            <Swiper
+                spaceBetween={30}
+                centeredSlides={true}
+                loop={true}
+                autoplay={{
+                    delay: 5000,
+                    disableOnInteraction: false,
+                }}
+                pagination={{
+                    clickable: true,
+                }}
+                navigation={true}
+                modules={[Autoplay, Pagination, Navigation]}
+                className='mySwiper'
+            >
+                <SwiperSlide>
+                    <Slide
+                        image={bg_img1}
+                        text='Get Your Web Development Projects Done in minutes'
+                    />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <Slide
+                        image={bg_img2}
+                        text='Get Your Graphics Design Projects Done in minutes'
+                    />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <Slide
+                        image={bg_img3}
+                        text='Start Your Digital Marketing Campaigns up n running'
+                    />
+                </SwiperSlide>
+            </Swiper>
+        </div>
     );
 };
 

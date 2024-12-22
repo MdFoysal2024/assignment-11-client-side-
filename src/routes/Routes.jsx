@@ -6,6 +6,9 @@ import Login from "../pages/Authentication/Login"
 import Register from "../pages/Authentication/Register"
 import PrivateRoute from "./PrivateRoute"
 import MyApplyList from "../pages/MyApplyList"
+import AddMarathons from "../pages/AddMarathons"
+import MyMarathonList from "../pages/MyMarathonList"
+import Marathons from "../pages/Marathons"
 
 
 const router = createBrowserRouter([
@@ -27,10 +30,30 @@ const router = createBrowserRouter([
                 element: <Register />,
             },
             {
+                path: '/marathons',
+                element: <Marathons></Marathons>,
+            },
+            {
+                path: '/add_marathons',
+                element: (
+                    <PrivateRoute>
+                        <AddMarathons></AddMarathons>
+                    </PrivateRoute>
+                ),
+            },
+            {
                 path: '/my_Apply_List',
                 element: (
                     <PrivateRoute>
                         <MyApplyList></MyApplyList>
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: '/my_marathon_List',
+                element: (
+                    <PrivateRoute>
+                        <MyMarathonList></MyMarathonList>
                     </PrivateRoute>
                 ),
             },
