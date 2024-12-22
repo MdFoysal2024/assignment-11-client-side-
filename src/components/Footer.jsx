@@ -18,22 +18,36 @@ const Footer = () => {
             <footer className="footer w-10/12 mx-auto   py-24 text-white p-10">
                 <div className="grid grid-cols-1   md:grid-cols-2 lg:grid-cols-4 w-full justify-center items-center lg:justify-between text-center">
                     <div>
-                        <div className='flex gap-2 '>
-                            <img className='w-12' src={logo} alt="" />
-                            <h3 className="text-3xl font-extrabold text-left"><span className="text-red-500">Crowd</span> Funding</h3>
+                        <div className='lg:text-left '>
+                            <a className="btn btn-ghost text-xl">
+                                <img className="w-12 " src={logo} alt="" />
+                                <h2 className="text-xl flex flex-col md:text-3xl font-extrabold">
+                                    <span className="text-orange-600">MARATHON</span>
+                                    <div className='flex justify-between'>
+                                        <span className="text-white text-sm ">E </span>
+                                        <span className="text-white text-sm ">V </span>
+                                        <span className="text-white text-sm ">E </span>
+                                        <span className="text-white text-sm ">N </span>
+                                        <span className="text-white text-sm ">T </span>
+                                        <span className="text-white text-sm ">S </span>
+
+                                    </div>
+
+                                </h2>
+                            </a>
                         </div>
                         <p className='lg:text-left pt-4  text-gray-500'>Donations can be withdrawn after a three-day waiting period and are available for payout on a weekly, monthly, or direct basis. </p>
 
                         <div className='flex cursor-pointer gap-4 text-4xl justify-center lg:justify-start py-4'>
-                        <IoLogoTwitter  className='text-[#212b3b] bg-white p-2 ' />
-                        <BsFacebook   className='text-[#212b3b] bg-white p-2 '/>
-                        <GrInstagram  className='text-[#212b3b] bg-white p-2 ' />
-                        <IoLogoLinkedin  className='text-[#212b3b] bg-white p-2 ' />
+                            <IoLogoTwitter className='text-white bg-orange-600 p-2 ' />
+                            <BsFacebook className='text-white bg-orange-600 p-2 ' />
+                            <GrInstagram className='text-white bg-orange-600 p-2 ' />
+                            <IoLogoLinkedin className='text-white bg-orange-600 p-2 ' />
                         </div>
                     </div>
 
                     <div className='lg:pl-24 text-center w-full lg:text-left'>
-                        <h3 className="text-2xl font-bold lg:text-left  pb-4 ">Company</h3>
+                        <h3 className="text-2xl text-orange-600 font-bold lg:text-left  pb-4 ">Company</h3>
                         <div className='text-gray-500 space-y-2'>
 
                             <p>About us</p>
@@ -44,7 +58,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className='text-center  w-full lg:text-left'>
-                        <h3 className="text-2xl font-bold lg:text-left pb-4">Fundraising</h3>
+                        <h3 className="text-2xl text-orange-600 font-bold lg:text-left pb-4">Fundraising</h3>
                         <div className='text-gray-500 space-y-2'>
                             <p>Education</p>
                             <p>Design</p>
@@ -54,7 +68,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className='space-y-2 text-center w-full lg:text-left'>
-                        <h3 className="text-2xl font-bold lg:text-left pb-4">Contact</h3>
+                        <h3 className="text-2xl text-orange-600 font-bold lg:text-left pb-4">Contact</h3>
                         <div className='flex gap-2 items-center justify-center lg:justify-start'>
                             <LuPhoneCall className='text-xl' />
                             <p className='text-gray-500 space-y-2'>+00 666 888 0000</p>

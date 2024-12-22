@@ -124,7 +124,7 @@ const Navbar = () => {
                                             <p className="py-4  text-center text-black">{user?.email}</p>
                                             <div className=" text-center ">
 
-                                                <Link to="/signIn">
+                                                <Link to="/login">
                                                     <button onClick={logOut} className='  bg-[#394c69] text-lg  text-white font-extrabold 
                                                 hover:bg-[#171e2b]
                                             
@@ -155,7 +155,7 @@ const Navbar = () => {
 
                             </>
                             :
-                            (<Link to='/signIn' className='btn text-3xl bg-slate-300 font-bold rounded-full '><IoPersonCircleOutline /></Link>)
+                            (<Link to='/login' className='btn text-3xl bg-slate-300 font-bold rounded-full '><IoPersonCircleOutline /></Link>)
                     }
 
 

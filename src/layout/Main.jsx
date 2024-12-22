@@ -6,17 +6,17 @@ import Footer from '../components/Footer';
 const Main = () => {
     return (
         <div>
-        {/* Navbar */}
-        <Navbar />
+            {/* Navbar */}
+            <Navbar />
 
-        {/* Outlet */}
-        <div className='min-h-[calc(100vh-306px)]'>
-          <Outlet />
+            {/* Outlet */}
+            <div className='min-h-[calc(100vh-306px)] container mx-auto '>
+                <Outlet />
+            </div>
+
+            {/* Footer */}
+            <Footer />
         </div>
-        
-        {/* Footer */}
-        <Footer />
-      </div>
     );
 };
 
