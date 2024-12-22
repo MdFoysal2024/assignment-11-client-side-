@@ -11,9 +11,15 @@ export default {
         lato: "'Lato', sans-serif",
       },
     },
+
+
+    
   },
   plugins: [
     daisyui,
   ],
+  daisyui: {
+    themes: ["light", "retro"],
+  },
 }
 
