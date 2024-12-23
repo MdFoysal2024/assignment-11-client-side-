@@ -11,12 +11,12 @@ import { getAuth } from "firebase/auth";
 
 
 // const firebaseConfig = {
-//     apiKey: VITE_apiKey,
-//     authDomain: VITE_authDomain,
-//     projectId: VITE_projectId,
-//     storageBucket: VITE_storageBucket,
-//     messagingSenderId: VITE_messagingSenderId,
-//     appId: VITE_appId
+//     apiKey: import.meta.env.VITE_apiKey,
+//     authDomain: import.meta.env.VITE_authDomain,
+//     projectId: import.meta.env.VITE_projectId,
+//     storageBucket: import.meta.env.VITE_storageBucket,
+//     messagingSenderId: import.meta.env.VITE_messagingSenderId,
+//     appId: import.meta.env.VITE_appId
 // };
 
 
@@ -28,6 +28,7 @@ const firebaseConfig = {
     messagingSenderId: "774476073887",
     appId: "1:774476073887:web:a5c13dc0091c9fbb624baa"
   };
+
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
