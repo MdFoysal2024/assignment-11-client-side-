@@ -155,7 +155,7 @@ const Navbar = () => {
                                     </button>
                                     
 
-                                        <dialog id="my_modal_5" className=" modal flex  justify-center left-auto right-16 top-6  w-[240px] modal-top ">
+                                        <dialog id="my_modal_5" className=" modal flex  justify-center left-auto right-16 top-6  w-[280px] modal-top ">
                                             <div className="bg-white px-8 py-12">
                                                 <img className="w-16 mb-6  mx-auto rounded-full" src={user?.photoURL} alt="" />
                                                 <h3 className="font-bold text-center text-black text-lg">{user?.displayName}</h3>
@@ -163,8 +163,8 @@ const Navbar = () => {
                                                 <div className=" text-center ">
 
                                                     <Link to="/login">
-                                                        <button onClick={logOut} className='  bg-[#394c69] text-lg  text-white font-extrabold 
-                                                hover:bg-[#171e2b]
+                                                        <button onClick={logOut} className=' bg-orange-600 text-lg  text-white font-extrabold 
+                                                hover:bg-orange-800
                                             
                                                 rounded-none px-6 py-2'>Log-Out</button>
                                                     </Link>
