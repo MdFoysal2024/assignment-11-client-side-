@@ -9,6 +9,8 @@ import MyApplyList from "../pages/MyApplyList"
 import AddMarathons from "../pages/AddMarathons"
 import MyMarathonList from "../pages/MyMarathonList"
 import Marathons from "../pages/Marathons"
+import UpdateMarathon from "../components/UpdateMarathon"
+import MarathonDetails from "../pages/MarathonDetails"
 
 
 const router = createBrowserRouter([
@@ -60,6 +62,24 @@ const router = createBrowserRouter([
                         <MyMarathonList></MyMarathonList>
                     </PrivateRoute>
                 ),
+            },
+            {
+                path: '/update_Marathon/:id',
+                element: <UpdateMarathon></UpdateMarathon>,
+            },
+            {
+                path: '/marathon_details/:id',
+                element: (
+                    <PrivateRoute>
+                        <MarathonDetails></MarathonDetails>
+                    </PrivateRoute>
+                ),
+                loader: async ({ params }) => {
+                    const paramsData = await fetch("http://localhost:5000/marathons")
+                    const data = await paramsData.json();
+                    const singleData = data.find(d => d._id == params.id)
+                    return singleData;
+                }
             },
 
 

@@ -1,5 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
+import { TbEdit } from "react-icons/tb";
+import { MdDeleteForever } from "react-icons/md";
+import { Link } from 'react-router-dom';
+
+
 
 const MyMarathonList = () => {
     const [marathon, setMarathon] = useState([]);
@@ -20,6 +25,14 @@ const MyMarathonList = () => {
     return (
         <div>
             My Marathons List here({marathon.length})
+            <div className='flex '>
+
+                <Link to={`/update_Marathon/${marathon._id}`}>
+                    <TbEdit />
+                </Link>
+
+                <MdDeleteForever />
+            </div>
         </div>
     );
 };

@@ -1,17 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import MarathonCard from '../components/MarathonCard';
 
 const Marathons = () => {
-    return (
-        <div> 
-            All Marathon Here
-            This page displays all created marathons in a 3-column grid layout using cards. Each card will display essential marathon information, such as:
-            Marathon Image
-            Marathon Title
-            Marathon Location
-            Registration Start and End Dates
-            "See Details" Button
-            When the user clicks the "See Details" button, they should be redirected to the Marathon Details page, where they can view more information about the selected marathon event.
 
+    const [marathons, setMarathons] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/marathons')
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setMarathons(data)
+            })
+    }, [])
+
+    console.log(marathons);
+
+    return (
+        <div className='container mx-auto my-16'>
+            All Marathon ({marathons.length} )
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+                {
+                    marathons.map(marathon => <MarathonCard key={marathon._id} marathon={marathon}></MarathonCard>)
+                }
+            </div>
         </div>
     );
 };
