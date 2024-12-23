@@ -10,7 +10,7 @@ const Main = () => {
             <Navbar />
 
             {/* Outlet */}
-            <div className='min-h-[calc(100vh-306px)] container mx-auto '>
+            <div className='min-h-[calc(100vh-593px)] container mx-auto '>
                 <Outlet />
             </div>
 

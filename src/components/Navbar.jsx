@@ -41,10 +41,10 @@ const Navbar = () => {
 
 
     const links = <>
-        <li ><NavLink to='/' style={({ isActive }) => ({ fontWeight: isActive ? "bold" : "normal", color: isActive ? "orangered" : "black", backgroundColor: isActive ? "rgb(248, 248, 240)" : "", textDecoration: isActive ? "underline" :""})}>Home</NavLink></li>
+        <li ><NavLink to='/' style={({ isActive }) => ({ fontWeight: isActive ? "bold" : "normal", color: isActive ? "orangered" : "black", backgroundColor: isActive ? "rgb(248, 248, 240)" : "", textDecoration: isActive ? "underline" : "" })}>Home</NavLink></li>
 
-        <li ><NavLink to='/marathons' 
-        style={({ isActive }) => ({ fontWeight: isActive ? "bold" : "normal", color: isActive ? "orangered" : "black", backgroundColor: isActive ? "rgb(248, 248, 240)" : "", textDecoration: isActive ? "underline" :""})}
+        <li ><NavLink to='/marathons'
+            style={({ isActive }) => ({ fontWeight: isActive ? "bold" : "normal", color: isActive ? "orangered" : "black", backgroundColor: isActive ? "rgb(248, 248, 240)" : "", textDecoration: isActive ? "underline" : "" })}
         >Marathons</NavLink></li>
 
         {
@@ -53,20 +53,20 @@ const Navbar = () => {
                     <li className='mx-4'>
                         <details >
                             <summary>Dashboard</summary>
-                            <ul className="bg-base-100 w-[180px] rounded-t-none p-2">
-                                
+                            <ul className="bg-base-100 z-10 w-[180px] rounded-t-none p-2">
+
                                 <li ><NavLink to='/add_marathons'
-                                style={({ isActive }) => ({ fontWeight: isActive ? "bold" : "normal", color: isActive ? "orangered" : "black", backgroundColor: isActive ? "rgb(248, 248, 240)" : "", textDecoration: isActive ? "underline" :""})}
+                                    style={({ isActive }) => ({ fontWeight: isActive ? "bold" : "normal", color: isActive ? "orangered" : "black", backgroundColor: isActive ? "rgb(248, 248, 240)" : "", textDecoration: isActive ? "underline" : "" })}
                                 >Add Marathons</NavLink></li>
 
                                 <li ><NavLink to='/my_marathon_List'
-                                style={({ isActive }) => ({ fontWeight: isActive ? "bold" : "normal", color: isActive ? "orangered" : "black", backgroundColor: isActive ? "rgb(248, 248, 240)" : "", textDecoration: isActive ? "underline" :""})}
+                                    style={({ isActive }) => ({ fontWeight: isActive ? "bold" : "normal", color: isActive ? "orangered" : "black", backgroundColor: isActive ? "rgb(248, 248, 240)" : "", textDecoration: isActive ? "underline" : "" })}
                                 >My Marathon List</NavLink></li>
 
                                 <li ><NavLink to='/my_apply_List'
-                                style={({ isActive }) => ({ fontWeight: isActive ? "bold" : "normal", color: isActive ? "orangered" : "black", backgroundColor: isActive ? "rgb(248, 248, 240)" : "", textDecoration: isActive ? "underline" :""})}
+                                    style={({ isActive }) => ({ fontWeight: isActive ? "bold" : "normal", color: isActive ? "orangered" : "black", backgroundColor: isActive ? "rgb(248, 248, 240)" : "", textDecoration: isActive ? "underline" : "" })}
                                 >My Apply List</NavLink></li>
-                               
+
                             </ul>
                         </details>
                     </li>
@@ -100,7 +100,7 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-gray-200 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content bg-gray-200 rounded-box z-[5] mt-3 w-52 p-2 shadow">
                             {links}
                         </ul>
                     </div>
@@ -150,33 +150,36 @@ const Navbar = () => {
                                 <div>
                                     {/* className="tooltip" data-tip="Home" */}
                                     {/* Open the modal using document.getElementById('ID').showModal() method */}
-                                    <button className="tooltip tooltip-right" data-tip="User Info" onClick={() => document.getElementById('my_modal_5').showModal()}>
+                                    <button className=""  onClick={() => document.getElementById('my_modal_5').showModal()}>
                                         <img className="w-12  mt-2 border-2 border-white rounded-full  " src={user?.photoURL} alt="" />
                                     </button>
-                                    <dialog id="my_modal_5" className=" modal flex  justify-end  w-[360px] modal-top ">
-                                        <div className="bg-white px-8 py-12">
-                                            <img className="w-16 mb-6  mx-auto rounded-full" src={user?.photoURL} alt="" />
-                                            <h3 className="font-bold text-center text-black text-lg">{user?.displayName}</h3>
-                                            <p className="py-4  text-center text-black">{user?.email}</p>
-                                            <div className=" text-center ">
+                                    
 
-                                                <Link to="/login">
-                                                    <button onClick={logOut} className='  bg-[#394c69] text-lg  text-white font-extrabold 
+                                        <dialog id="my_modal_5" className=" modal flex  justify-center left-auto right-16 top-6  w-[240px] modal-top ">
+                                            <div className="bg-white px-8 py-12">
+                                                <img className="w-16 mb-6  mx-auto rounded-full" src={user?.photoURL} alt="" />
+                                                <h3 className="font-bold text-center text-black text-lg">{user?.displayName}</h3>
+                                                <p className="py-4  text-center text-black">{user?.email}</p>
+                                                <div className=" text-center ">
+
+                                                    <Link to="/login">
+                                                        <button onClick={logOut} className='  bg-[#394c69] text-lg  text-white font-extrabold 
                                                 hover:bg-[#171e2b]
                                             
                                                 rounded-none px-6 py-2'>Log-Out</button>
-                                                </Link>
+                                                    </Link>
 
-                                            </div>
+                                                </div>
 
-                                            <div className="text-center">
-                                                <form method="dialog">
-                                                    {/* if there is a button in form, it will close the modal */}
-                                                    <button className="btn mt-6">Close</button>
-                                                </form>
+                                                <div className="text-center">
+                                                    <form method="dialog">
+                                                        {/* if there is a button in form, it will close the modal */}
+                                                        <button className="btn mt-6">Close</button>
+                                                    </form>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </dialog>
+                                        </dialog>
+                                   
                                 </div>
 
 
