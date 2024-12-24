@@ -83,7 +83,7 @@ const MyMarathonList = () => {
 
     //My Marathons List here({marathon.length})
     return (
-        <div className="w-10/12 mx-auto py-24">
+        <div className="w-10/12 mx-auto py-24 ">
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>My Marathon</title>
@@ -91,7 +91,7 @@ const MyMarathonList = () => {
             </Helmet>
             <h2 className='text-center pb-12 text-5xl font-bold'>
 
-                My <span className='text-orange-600'>Marathon</span>
+                My <span className='text-orange-600'>Marathon</span> Page
             </h2>
 
             {/* user info({users.length}) */}
@@ -121,13 +121,13 @@ const MyMarathonList = () => {
                                     <td className='font-bold'>{marathon.title}</td>
 
                                    
-                                    <td>{format(new Date(marathon.start_Date), 'P')}  to  {format(new Date(marathon.start_Date), 'P')} </td>
+                                    <td>{format(new Date(marathon.start_Date), 'P')}  to  {format(new Date(marathon.end_Date), 'P')} </td>
 
                                 
                                
 
 
-                                    <td>
+                                    <td className='flex'>
                                         <Link to={`/update_Marathon/${marathon._id}`}>
                                             <button className="btn text-lg"><GrEdit /></button>
                                         </Link>
