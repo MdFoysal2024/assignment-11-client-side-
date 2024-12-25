@@ -36,7 +36,7 @@ const Footer = () => {
                                 </h2>
                             </a>
                         </div>
-                        <p className='lg:text-left pt-4  text-gray-500'>Donations can be withdrawn after a three-day waiting period and are available for payout on a weekly, monthly, or direct basis. </p>
+                        <p className='lg:text-left pt-4  text-gray-500'>MarathonEvent.com - the complete marathon resource and community. Complete directory of marathons, marathon results, athlete and race news, marathon history. </p>
 
                         <div className='flex cursor-pointer gap-4 text-4xl justify-center lg:justify-start py-4'>
                             <IoLogoTwitter className='text-white bg-orange-600 p-2 ' />
@@ -47,7 +47,7 @@ const Footer = () => {
                     </div>
 
                     <div className='lg:pl-24 text-center w-full lg:text-left'>
-                        <h3 className="text-2xl text-orange-600 font-bold lg:text-left  pb-4 ">Company</h3>
+                        <h3 className="text-2xl text-orange-600 font-bold lg:text-left  pb-4 ">About Us</h3>
                         <div className='text-gray-500 space-y-2'>
 
                             <p>About us</p>
@@ -58,7 +58,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className='text-center  w-full lg:text-left'>
-                        <h3 className="text-2xl text-orange-600 font-bold lg:text-left pb-4">Fundraising</h3>
+                        <h3 className="text-2xl text-orange-600 font-bold lg:text-left pb-4">Services</h3>
                         <div className='text-gray-500 space-y-2'>
                             <p>Education</p>
                             <p>Design</p>

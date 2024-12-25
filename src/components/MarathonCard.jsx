@@ -20,12 +20,12 @@ const MarathonCard = ({ marathon }) => {
 
     return (
         <div>
-            <div className="card bg-gray-200 rounded-none  ">
+            <div className="card bg-gray-200 rounded-none h-[440px] ">
                 <figure className="px-10 pt-10">
                     <img
                         src={marathon_img}
                         alt="image"
-                        className="w-[360px]" />
+                        className="w-full pt-12" />
                 </figure>
                 <div className="card-body  text-left">
                     <h2 className=" text-left text-2xl font-bold text-blue-950 uppercase">{title}</h2>

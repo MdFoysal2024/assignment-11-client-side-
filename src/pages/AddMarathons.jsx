@@ -42,8 +42,8 @@ const AddMarathons = () => {
             end_Date,
             marathon_Date,
             running_distance,
-            user_name:user.displayName,
-            user_email:user.email,
+            user_name:user?.displayName,
+            user_email:user?.email,
             createdAt: new Date(),
             registration_count: 0, //-->input field ছাড়া একটি ইনিসিয়াল ভ্যলু
         };
