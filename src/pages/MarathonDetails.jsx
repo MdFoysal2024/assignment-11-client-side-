@@ -1,11 +1,42 @@
 import axios from 'axios';
 import { format } from 'date-fns';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 
 const MarathonDetails = () => {
+    //registration btn conditional state
+    const [isDisabled, setIsDisabled] = useState(false);
+
+    // const registrationStartDate = new Date();
+    // const registrationEndDate = new Date();
+
+    // console.log(registrationStartDate);
+    // console.log(registrationEndDate);
+
+    // useEffect(() => {
+    //     const today = new Date();
+
+    //     // Disable the button if the current date is outside the registration period
+    //     if (today < registrationStartDate || today > registrationEndDate) {
+    //         setIsDisabled(true);
+    //     } else {
+    //         setIsDisabled(false);
+    //     }
+    // }, []);
+
+
+    const today = new Date();
+    console.log(today)
+    // if (today < start_Date || today > end_Date) {
+    //     setIsDisabled(true);
+    // } else {
+    //     setIsDisabled(false);
+    // }
+
+
+
     const marathonData = useLoaderData()
     console.log(marathonData);
     const navigate = useNavigate()
@@ -28,6 +59,7 @@ const MarathonDetails = () => {
     } = marathonData || {}
 
     console.log(user_email)
+    console.log(start_Date)
 
     const handleMarathonApply = async (e) => {
 
@@ -128,9 +160,19 @@ const MarathonDetails = () => {
                                             {format(new Date(marathon_Date), 'P')}</p>
                                         <p><span className='font-bold text-lg'>Running Distance:  </span>
                                             {running_distance}</p>
-                                        <p><span className='font-bold text-orange-600 text-lg'>Total Registration Count:  </span>
+                                        <p><span className='font-bold  text-orange-600 text-lg'>Total Registration Count:  </span>
                                             <div className="badge badge-secondary">{registration_count}</div></p>
 
+                                        <a href="#registration">
+
+                                            {/* <button className=' btn w-full bg-orange-600 hover:bg-orange-800 font-bold text-lg text-white '>Registration</button> */}
+
+                                            <button className=' btn w-full font-bold text-lg text-white bg-orange-600' disabled={isDisabled}>
+                                                {isDisabled ? "Registration Closed" : "Register Now"}
+                                            </button>
+
+
+                                        </a>
 
                                     </div>
 
@@ -143,7 +185,7 @@ const MarathonDetails = () => {
             </div>
 
             {/* ---------------Marathon Apply Form-------------  */}
-            <div className='w-[80%]  md:w-[80%]  xl:w-[70%] mx-auto bg-slate-200 p-16 my-24 m'>
+            <div id='registration' className='w-[80%]  md:w-[80%]  xl:w-[70%] mx-auto bg-slate-200 p-16 my-24 m'>
                 <div>
                     <h2 className='text-4xl font-bold text-center pb-12'>
 

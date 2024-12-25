@@ -1,0 +1,46 @@
+[
+    {
+      "id": 1,
+      "image": "https://wmimg.azureedge.net/public/img/marathons/infinitri-burriana-triathlon-festival/41T30QH_infinitri-burriana-triathlon-festival.jpg?c=1729562367",
+      "title": "Luxury Beach House",
+      "location": "Malibu, California",
+      "budget": 2500000
+    },
+    {
+      "id": 2,
+      "image": "https://example.com/image2.jpg",
+      "title": "Modern Apartment",
+      "location": "New York, New York",
+      "budget": 1500000
+    },
+    {
+      "id": 3,
+      "image": "https://example.com/image3.jpg",
+      "title": "Mountain Cabin",
+      "location": "Aspen, Colorado",
+      "budget": 850000
+    },
+    {
+      "id": 4,
+      "image": "https://example.com/image4.jpg",
+      "title": "Urban Loft",
+      "location": "Seattle, Washington",
+      "budget": 650000
+    },
+    {
+      "id": 5,
+      "image": "https://example.com/image5.jpg",
+      "title": "Country Estate",
+      "location": "Nashville, Tennessee",
+      "budget": 1250000
+    },
+    {
+      "id": 6,
+      "image": "https://example.com/image6.jpg",
+      "title": "Desert Villa",
+      "location": "Scottsdale, Arizona",
+      "budget": 1800000
+    }
+  ]
+  
+  
