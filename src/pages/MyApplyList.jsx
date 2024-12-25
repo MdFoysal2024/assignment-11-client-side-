@@ -18,7 +18,7 @@ const MyApplyList = () => {
     const { user } = useContext(AuthContext);
     console.log(user.email)
     useEffect(() => {
-        fetch(`http://localhost:5000/myApplyList?email=${user.email}`)
+        fetch(`https://marathon-events-server.vercel.app/myApplyList?email=${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setMarathonApply(data)
@@ -77,7 +77,7 @@ const MyApplyList = () => {
         // try {
         //     //data post request--->
         //     
-        //     await axios.post('http://localhost:5000/updateApplication/', formData)
+        //     await axios.post('https://marathon-events-server.vercel.app/updateApplication/', formData)
 
         //     //form reset--->
         //     //   form.reset();
@@ -119,7 +119,7 @@ const MyApplyList = () => {
                 if (result.isConfirmed) {
 
                     console.log('Delete Confirmed');
-                    fetch(`http://localhost:5000/deleteApplication/${_id}`, {
+                    fetch(`https://marathon-events-server.vercel.app/deleteApplication/${_id}`, {
                         method: "DELETE",
 
                     })

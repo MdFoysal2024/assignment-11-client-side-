@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import { toast } from 'react-hot-toast'
 import axios from 'axios';
+import { Helmet } from 'react-helmet';
 
 
 const AddMarathons = () => {
@@ -79,7 +80,7 @@ const AddMarathons = () => {
         try {
           //data post request--->
           //await axios.post(`${import.meta.env.VITE_API_URL}/add-job`, formData)
-          await axios.post('http://localhost:5000/marathons', formData)
+          await axios.post('https://marathon-events-server.vercel.app/marathons', formData)
 
           //form reset--->
         //   form.reset();
@@ -105,6 +106,12 @@ const AddMarathons = () => {
 
     return (
         <div className='w-full md:w-2/3 lg:w-1/2 mx-auto bg-neutral-300 p-12 my-16' >
+ <Helmet>
+                <meta charSet="utf-8" />
+                <title>Add Marathon Page</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
+
 
             <h2 className="text-center mx-auto  mt-6 p-4 text-3xl md:text-3xl lg:text-4xl font-bold">Post A New <span className='text-orange-600'>Marathon</span> </h2>
 
