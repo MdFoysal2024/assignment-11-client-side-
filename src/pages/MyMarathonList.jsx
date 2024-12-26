@@ -6,6 +6,7 @@ import { GrEdit } from "react-icons/gr";
 import { MdDeleteForever } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import { format } from 'date-fns';
+import useAxiosSecure from '../hooks/useAxiosSecure';
 
 
 
@@ -16,13 +17,25 @@ import { format } from 'date-fns';
 const MyMarathonList = () => {
     const [marathons, setMarathons] = useState([]);
     const { user } = useContext(AuthContext);
-
+    const axiosSecure = useAxiosSecure();
     useEffect(() => {
-        fetch(`https://marathon-events-server.vercel.app/myMarathonList?email=${user.email}`)
-            .then(res => res.json())
-            .then(data => {
-                setMarathons(data)
+
+
+        // fetch(`https://marathon-events-server.vercel.app/myMarathonList?email=${user.email}`)
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         setMarathons(data)
+        //     })
+
+        // fetch এর পরিবর্তে axios এর কাস্টম হুক দিয়ে
+        //const axiosSecure = useAxiosSecure() ------>custom hook উপরে আছে
+        
+        axiosSecure.get(`/myMarathonList?email=${user.email}`)
+            .then(res => {
+                console.log(setMarathons(res.data))
             })
+
+
     }, [user.email])
     console.log(marathons)
 
@@ -101,7 +114,7 @@ const MyMarathonList = () => {
                     <thead>
                         <tr className='bg-slate-500 text-lg text-white '>
                             <th className='py-6 pl-8'>No</th>
-                          
+
                             <th>Name</th>
                             <th>Email</th>
                             <th>Marathon Title</th>
@@ -115,16 +128,16 @@ const MyMarathonList = () => {
                             marathons.map((marathon, idx) =>
                                 <tr className='bg-slate-300 text-lg' key={marathon._id}>
                                     <th className='pl-8'>{idx + 1}</th>
-                                  
+
                                     <td>{marathon.user_name}</td>
                                     <td>{marathon.user_email}</td>
                                     <td className='font-bold'>{marathon.title}</td>
 
-                                   
+
                                     <td>{format(new Date(marathon.start_Date), 'P')}  to  {format(new Date(marathon.end_Date), 'P')} </td>
 
-                                
-                               
+
+
 
 
                                     <td className='flex'>

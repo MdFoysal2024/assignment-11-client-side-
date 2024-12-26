@@ -8,21 +8,38 @@ import { MdDeleteForever } from 'react-icons/md';
 import toast from 'react-hot-toast';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../hooks/useAxiosSecure';
 
 const MyApplyList = () => {
     //myApplyList
     const { id } = useParams();
     console.log(id);
 
+    const axiosSecure = useAxiosSecure();
+
     const [marathonApply, setMarathonApply] = useState([]);
     const { user } = useContext(AuthContext);
     console.log(user.email)
     useEffect(() => {
+
+
         fetch(`https://marathon-events-server.vercel.app/myApplyList?email=${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setMarathonApply(data)
             })
+
+
+
+            // axiosSecure.get(`/myApplyList?email=${user.email}`)
+            // .then(res => {
+            //     console.log(setMarathonApply(res.data))
+            // })
+
+
+
+
+
     }, [user.email])
     console.log(marathonApply)
 

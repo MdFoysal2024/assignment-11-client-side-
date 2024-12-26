@@ -14,6 +14,7 @@ import {
 
 } from 'firebase/auth'
 import { app } from '../firebase/firebase.config'
+import axios from 'axios';
 
 
 
@@ -51,7 +52,7 @@ const AuthProvider = ({ children }) => {
         return signOut(auth)
     }
 
-    const updateUserProfile = (updateData)=>{
+    const updateUserProfile = (updateData) => {
         return updateProfile(auth.currentUser, updateData)
     }
 
@@ -59,8 +60,39 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser)
-            console.log('CurrentUser-->', currentUser)
-            setLoading(false)
+            console.log('CurrentUser-->', currentUser);
+            console.log('CurrentUser-->', currentUser.email);
+
+            if (currentUser?.email) {
+
+                const user = { email: currentUser.email }
+
+                //-----------> jwt token create documentation-->
+
+                axios.post('https://marathon-events-server.vercel.app/jwt', user, {
+                    withCredentials: true
+                })
+                    .then(res => {
+                        console.log('Login Create Token', res.data);
+                        setLoading(false);
+                    })
+            }
+
+            else {
+
+                //---> jwt token remove documentation ‍after logout--->
+
+                axios.post('https://marathon-events-server.vercel.app/logout', {}, {
+                    withCredentials: true
+                })
+                    .then(res => {
+                        console.log('Log Out Remove Token', res.data);
+                        setLoading(false);
+                    })
+            }
+
+
+
         })
         return () => {
             return unsubscribe()

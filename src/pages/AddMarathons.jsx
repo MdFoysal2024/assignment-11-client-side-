@@ -43,8 +43,8 @@ const AddMarathons = () => {
             end_Date,
             marathon_Date,
             running_distance,
-            user_name:user?.displayName,
-            user_email:user?.email,
+            user_name: user?.displayName,
+            user_email: user?.email,
             createdAt: new Date(),
             registration_count: 0, //-->input field ছাড়া একটি ইনিসিয়াল ভ্যলু
         };
@@ -78,23 +78,23 @@ const AddMarathons = () => {
 
 
         try {
-          //data post request--->
-          //await axios.post(`${import.meta.env.VITE_API_URL}/add-job`, formData)
-          await axios.post('https://marathon-events-server.vercel.app/marathons', formData)
+            //data post request--->
+            //await axios.post(`${import.meta.env.VITE_API_URL}/add-job`, formData)
+            await axios.post('https://marathon-events-server.vercel.app/marathons', formData)
 
-          //form reset--->
-        //   form.reset();
+            //form reset--->
+            //   form.reset();
 
-          //show toast & navigate to my-posted-jobs route --->
-          toast.success('Marathon Added Successfully!!!');
-          navigate('/my_marathon_List');
+            //show toast & navigate to my-posted-jobs route --->
+            toast.success('Marathon Added Successfully!!!');
+            navigate('/my_marathon_List');
 
         }
 
         catch (err) {
-          console.log(err);
-          //toast.error('Something went wrong!!!');
-          toast.error(err.message);
+            console.log(err);
+            //toast.error('Something went wrong!!!');
+            toast.error(err.message);
         }
 
     }
@@ -106,7 +106,7 @@ const AddMarathons = () => {
 
     return (
         <div className='w-full md:w-2/3 lg:w-1/2 mx-auto bg-neutral-300 p-12 my-16' >
- <Helmet>
+            <Helmet>
                 <meta charSet="utf-8" />
                 <title>Add Marathon Page</title>
                 <link rel="canonical" href="http://mysite.com/example" />
