@@ -10,14 +10,11 @@ import useAxiosSecure from '../hooks/useAxiosSecure';
 
 
 
-
-
-
-
 const MyMarathonList = () => {
     const [marathons, setMarathons] = useState([]);
     const { user } = useContext(AuthContext);
     const axiosSecure = useAxiosSecure();
+
     useEffect(() => {
 
 
@@ -29,7 +26,7 @@ const MyMarathonList = () => {
 
         // fetch এর পরিবর্তে axios এর কাস্টম হুক দিয়ে
         //const axiosSecure = useAxiosSecure() ------>custom hook উপরে আছে
-        
+
         axiosSecure.get(`/myMarathonList?email=${user.email}`)
             .then(res => {
                 console.log(setMarathons(res.data))
@@ -37,7 +34,7 @@ const MyMarathonList = () => {
 
 
     }, [user.email])
-    console.log(marathons)
+    //console.log(marathons)
 
 
     const {

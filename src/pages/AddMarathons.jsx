@@ -105,7 +105,7 @@ const AddMarathons = () => {
 
 
     return (
-        <div className='w-full md:w-2/3 lg:w-1/2 mx-auto bg-neutral-300 p-12 my-16' >
+        <div className='w-full md:w-2/3 lg:w-1/2 mx-auto border-2 bg-orange-50 p-12 my-16' >
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Add Marathon Page</title>

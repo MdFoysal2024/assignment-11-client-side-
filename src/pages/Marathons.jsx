@@ -9,12 +9,12 @@ const Marathons = () => {
         fetch('https://marathon-events-server.vercel.app/marathons')
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                //console.log(data)
                 setMarathons(data)
             })
     }, [])
 
-    console.log(marathons);
+    //console.log(marathons);
 
     return (
         <div className='container mx-auto my-16'>

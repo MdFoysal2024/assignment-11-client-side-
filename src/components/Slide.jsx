@@ -16,7 +16,7 @@ const Slide = ({ image, text }) => {
           </h1>
           <br />
           <Link
-            to='/add-job'
+            to='/marathons'
             className='w-full px-5 py-3 mt-4 text-xl font-medium text-white capitalize transition-colors duration-300 transform bg-orange-600 rounded-md lg:w-auto hover:bg-orange-800  focus:outline-none focus:bg-gray-500'
           >
             Registration

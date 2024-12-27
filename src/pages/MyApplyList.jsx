@@ -8,42 +8,44 @@ import { MdDeleteForever } from 'react-icons/md';
 import toast from 'react-hot-toast';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import useAxiosSecure from '../hooks/useAxiosSecure';
+//import useAxiosSecure from '../hooks/useAxiosSecure';
 
 const MyApplyList = () => {
     //myApplyList
-    const { id } = useParams();
-    console.log(id);
 
-    const axiosSecure = useAxiosSecure();
+
+    //const axiosSecure = useAxiosSecure();
 
     const [marathonApply, setMarathonApply] = useState([]);
     const { user } = useContext(AuthContext);
-    console.log(user.email)
+    // console.log(user.email)
     useEffect(() => {
 
 
-        fetch(`https://marathon-events-server.vercel.app/myApplyList?email=${user.email}`)
+        fetch(`http://localhost:5000/myApplyList?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
+                console.log(data)
                 setMarathonApply(data)
             })
 
 
 
-            // axiosSecure.get(`/myApplyList?email=${user.email}`)
-            // .then(res => {
-            //     console.log(setMarathonApply(res.data))
-            // })
+        // axiosSecure.get(`/myApplyList?email=${user?.email}`)
+        // .then(res => {
+        //     console.log(setMarathonApply(res.data))
+        //     console.log(res.data.data)
+        // })
 
 
 
 
 
-    }, [user.email])
-    console.log(marathonApply)
 
-   
+    }, [user?.email])
+    // console.log(marathonApply)
+
+
 
 
     //Application Update functionality
@@ -195,11 +197,12 @@ const MyApplyList = () => {
                     <tbody>
                         {/* row 1 */}
                         {
-                            marathonApply.map((apply, idx) =>
+                            marathonApply?.map((apply, idx) =>
                                 <tr className='bg-slate-300  text-lg' key={apply._id}>
                                     <th className='pl-8'>{idx + 1}</th>
 
                                     <td>{apply.first_name}</td>
+                                   
                                     <td>{apply.email}</td>
                                     <td className='font-bold'>{apply.title}</td>
 
@@ -211,15 +214,17 @@ const MyApplyList = () => {
 
 
 
-                                    <td className='flex'>
+                                    <td className='flex' to={`${apply._id}`}>
+                            
+                                            <button className="btn text-blue-950 text-lg"
+                                                onClick={() => document.getElementById('my_modal_1').showModal()}
+                                            ><GrEdit /></button>
+                                       
 
-                                        <button className="btn text-blue-950 text-lg"
-                                            onClick={() => document.getElementById('my_modal_1').showModal()}
-                                        ><GrEdit /></button>
                                         {/* Open the modal using document.getElementById('ID').showModal() method */}
 
-                                        <dialog id="my_modal_1" className="modal">
-                                            <div className="modal-box">
+                                        <dialog id="my_modal_1" className="modal w-[640px] mx-auto ">
+                                            <div className="modal-box flex items-end gap-4 pl-8">
 
 
                                                 <form onSubmit={handleUpdateApplication} className='space-y-4'>
@@ -231,8 +236,8 @@ const MyApplyList = () => {
                                                                 <span className="label-text">First Name:</span>
                                                             </label>
 
-                                                            {/* defaultValue={user_name}  */}
                                                             <input type="text" name="first_name" className="input input-bordered"
+                                                           
                                                                 placeholder='First Name' required />
                                                         </div>
 
@@ -281,8 +286,8 @@ const MyApplyList = () => {
                                                             {/* defaultValue={title} */}
                                                             <input type="text"
                                                                 name="title"
-                                                                defaultValue={apply.title}
-                                                                disabled={true}
+                                                                defaultValue={`${apply.title}`}
+                                                                // disabled={true}
                                                                 className="input input-bordered" required />
                                                         </div>
 
@@ -300,19 +305,31 @@ const MyApplyList = () => {
                                                     </div>
 
 
-                                                    <div className="form-control " >
+                                                    {/* <div className="form-control " >
                                                         <button className="btn  bg-orange-600 hover:bg-orange-800 text-white text-lg">Apply Now</button>
 
                                                         <div className="modal-action  flex justify-center " type='submit'>
                                                             <form method="dialog">
-                                                                {/* if there is a button in form, it will close the modal */}
+                                                    
                                                                 <button className="btn  bg-blue-950 px-12 hover:bg-orange-800 text-white  text-lg">Close</button>
                                                             </form>
                                                         </div>
 
+                                                    </div> */}
+
+                                                    <div className="modal-action">
+                                                        <button
+                                                            className="btn btn-primary"
+                                                            onClick={() => {
+                                                                // Add save logic here
+                                                                // alert('Saved!');
+                                                                document.getElementById('my_modal_1').close();
+                                                            }}
+                                                        >
+                                                            Update
+                                                        </button>
+
                                                     </div>
-
-
 
                                                     {/* <div className="form-control " >
 
@@ -326,6 +343,15 @@ const MyApplyList = () => {
                                                     </div> */}
 
                                                 </form >
+                                                <div className='flex justify-center '>
+
+                                                    <button
+                                                        className="btn btn-secondary btn-end"
+                                                        onClick={() => document.getElementById('my_modal_1').close()}
+                                                    >
+                                                        Cancel
+                                                    </button>
+                                                </div>
 
                                             </div>
                                         </dialog>

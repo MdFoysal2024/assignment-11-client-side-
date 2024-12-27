@@ -5,6 +5,8 @@ import UpcomingCard from '../components/UpcomingCard';
 import { Link } from 'react-router-dom';
 import { FaLocationDot, FaPersonRunning } from 'react-icons/fa6';
 import { FaCalendarAlt } from 'react-icons/fa';
+import { HiBadgeCheck } from "react-icons/hi";
+import { motion } from "framer-motion";
 
 const Home = () => {
 
@@ -19,7 +21,7 @@ const Home = () => {
             })
     }, [])
 
-    console.log(marathons);
+    //console.log(marathons);
 
 
 
@@ -34,7 +36,7 @@ const Home = () => {
             })
     }, [])
 
-    console.log(upcomingCard);
+    //console.log(upcomingCard);
 
 
 
@@ -54,6 +56,82 @@ const Home = () => {
                         marathons.slice(0, 6).map(marathon => <MarathonCard key={marathon._id} marathon={marathon}></MarathonCard>)
                     }
                 </div>
+
+            </div>
+
+            <div>
+
+                <motion.h1
+                    animate={{ x: 50 }}
+                    transition={{ duration: 2, delay: 1, repeat: Infinity }}
+                    className="text-5xl font-bold">Latest <motion.span
+                        animate={{ color: ['#8442f5', '#d742f5', '#f542aa'] }}
+                        transition={{ duration: 1.5, repeat: Infinity }}
+                    >Jobs</motion.span> Jobs For You!</motion.h1>
+            </div>
+
+            {/* Extra section-01 */}
+            <div className='flex flex-col gap-24 my-24 bg-orange-50 p-24 lg:flex-row md:flex-col '>
+                <div className='grid grid-cols-2 gap-4'>
+                    <img className='w-[420px] border-8 border-white' src={'https://web.moxcreative.com/justrunnin/wp-content/uploads/sites/21/2023/03/back-view-of-a-young-male-athlete-launching-off-the-start-line.jpg'} alt="" />
+                    <img className='w-[420px] h-[197px] border-8 border-white' src={'https://media.wired.com/photos/59c591dbdafeee11a7c1cb92/master/pass/BerlinMarathon-RTX1ABKY.jpg'} alt="" />
+                    <img className='grid col-span-2  border-8 border-white' src={'https://live-production.wcms.abc-cdn.net.au/5a196f12c13d1215f4c6a72d46503b56?impolicy=wcms_crop_resize&cropH=1332&cropW=2368&xPos=109&yPos=130&width=862&height=485 '} alt="" />
+                </div>
+                <div>
+
+                    <p className='text-gray-800 italic text-xl'>Why You Should Join Us</p>
+                    <h2 className='text-5xl font-bold italic py-8 mb-4'>Run unintentionally, and feel the difference</h2>
+                    <p className='text-gray-500'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+
+
+
+                    <div className='grid grid-cols-2 pt-16 gap-16'>
+
+
+                        <div className='flex gap-4'>
+
+                            <HiBadgeCheck className='text-orange-600 text-6xl'></HiBadgeCheck>
+                            <div>
+                                <h3 className='text-3xl font-bold'>Be Strong</h3>
+                                <p className='text-gray-500'>Per luctus accumsan dictumst duis orci finibus facilisi.</p>
+                            </div>
+                        </div>
+                        <div className='flex gap-4'>
+
+                            <HiBadgeCheck className='text-orange-600 text-6xl'></HiBadgeCheck>
+                            <div>
+                                <h3 className='text-3xl font-bold'>Be One of Us</h3>
+                                <p className='text-gray-500'>Per luctus accumsan dictumst duis orci finibus facilisi.</p>
+                            </div>
+                        </div>
+                        <div className='flex gap-4'>
+
+                            <HiBadgeCheck className='text-orange-600 text-6xl'></HiBadgeCheck>
+                            <div>
+                                <h3 className='text-3xl font-bold'>Be Faster</h3>
+                                <p className='text-gray-500'>Per luctus accumsan dictumst duis orci finibus facilisi.</p>
+                            </div>
+                        </div>
+                        <div className='flex gap-4'>
+
+                            <HiBadgeCheck className='text-orange-600 text-6xl'></HiBadgeCheck>
+                            <div>
+                                <h3 className='text-3xl font-bold'>Be Healthy</h3>
+                                <p className='text-gray-500'>Per luctus accumsan dictumst duis orci finibus facilisi.</p>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+
+
+                </div>
+
+
+
 
             </div>
 
@@ -82,11 +160,10 @@ const Home = () => {
 
 
 
-
-
+            {/* Extra section-02 */}
 
             <div>
-                <section className="bg-gray-100 my-24 border-2 border-gray-300  text-gray-800">
+                <section className="bg-gray-100 my-24 border-2 border-gray-200  text-gray-800">
                     <div className="container flex flex-col justify-center p-12 my-16 mx-auto sm:py-12  lg:flex-row gap-16 lg:justify-between">
                         <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
                             <img src="https://www.tata.com/content/dam/tata/images/newsroom/community/desktop/marathon-lead-image-desktop-1920x1080.jpg" alt="" className="" />
@@ -97,8 +174,8 @@ const Home = () => {
 
                             <div className='flex font-bold pt-8 justify-between'>
                                 <p className='flex items-center gap-2'><FaLocationDot />Malibu, California <span className='text-gray-500'></span></p>
-                                                <p className='flex items-center gap-2'><FaPersonRunning />10km, 15km <span className='text-gray-500'></span></p>
-                                                <p className='flex items-center gap-2'><FaCalendarAlt /> <span className='text-white font-semibold bg-orange-600 px-4 rounded-full '>Coming Soon</span></p>
+                                <p className='flex items-center gap-2'><FaPersonRunning />10km, 15km <span className='text-gray-500'></span></p>
+                                <p className='flex items-center gap-2'><FaCalendarAlt /> <span className='text-white font-semibold bg-orange-600 px-4 rounded-full '>Coming Soon</span></p>
                             </div>
                             <p className="mt-6 mb-8 text-gray-500 text-lg sm:mb-12">The Kauai Marathon and Half Marathon is one of the most beautiful destination races in the world today. Run on August 31, 2025, this is a great way to combine a unique experience and a get-away that only Kauai can offer. You will be treated to beautiful beaches, an inspiring course, and fellowship with participants from around the world. Register today!
                             </p>

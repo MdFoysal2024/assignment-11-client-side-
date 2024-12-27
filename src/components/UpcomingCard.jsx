@@ -5,7 +5,7 @@ import { FaLocationDot, FaPersonRunning } from 'react-icons/fa6';
 const UpcomingCard = ({ card }) => {
     const { image, title, location, budget, running_distance } = card || {};
     return (
-        <div className='flex  flex-col md:flex-col lg:flex-row gap-4 items-center justify-center bg-slate-300 p-6'>
+        <div className='flex  flex-col md:flex-col lg:flex-row gap-4 items-center justify-center  border-2 bg-orange-50 p-6'>
             <img src={image} alt="" className='w-[200px] h-[160px]' />
 
             <div className='text-gray-600 space-y-2'>
