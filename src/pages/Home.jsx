@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { FaLocationDot, FaPersonRunning } from 'react-icons/fa6';
 import { FaCalendarAlt } from 'react-icons/fa';
 import { HiBadgeCheck } from "react-icons/hi";
-import { motion } from "framer-motion";
+
 
 const Home = () => {
 
@@ -59,16 +59,7 @@ const Home = () => {
 
             </div>
 
-            <div>
-
-                <motion.h1
-                    animate={{ x: 50 }}
-                    transition={{ duration: 2, delay: 1, repeat: Infinity }}
-                    className="text-5xl font-bold">Latest <motion.span
-                        animate={{ color: ['#8442f5', '#d742f5', '#f542aa'] }}
-                        transition={{ duration: 1.5, repeat: Infinity }}
-                    >Jobs</motion.span> Jobs For You!</motion.h1>
-            </div>
+            
 
             {/* Extra section-01 */}
             <div className='flex flex-col gap-24 my-24 bg-orange-50 p-24 lg:flex-row md:flex-col '>

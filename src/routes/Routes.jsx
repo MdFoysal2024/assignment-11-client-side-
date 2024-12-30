@@ -74,6 +74,12 @@ const router = createBrowserRouter([
                     <PrivateRoute>
                         <MarathonRegistration></MarathonRegistration>
                     </PrivateRoute>),
+                    loader: async ({ params }) => {
+                        const paramsData = await fetch("https://marathon-events-server.vercel.app/marathons")
+                        const data = await paramsData.json();
+                        const singleData = data.find(d => d._id == params.id)
+                        return singleData;
+                    }
             },
             {
                 path: '/marathon_details/:id',

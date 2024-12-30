@@ -151,13 +151,13 @@ const Navbar = () => {
                                     {/* className="tooltip" data-tip="Home" */}
                                     {/* Open the modal using document.getElementById('ID').showModal() method */}
                                     <button className=""  onClick={() => document.getElementById('my_modal_5').showModal()}>
-                                        <img className="w-12  mt-2 border-2 border-white rounded-full  " src={user?.photoURL} alt="" />
+                                        <img className="w-12  mt-2 border-2 border-gray-500 rounded-full  " src={user?.photoURL} alt="" />
                                     </button>
                                     
 
                                         <dialog id="my_modal_5" className=" modal flex  justify-center left-auto right-16 top-6  w-[280px] modal-top ">
                                             <div className="bg-white px-8 py-12">
-                                                <img className="w-16 mb-6  mx-auto rounded-full" src={user?.photoURL} alt="" />
+                                                <img className="w-16 mb-6 border-2  border-gray-500 mx-auto rounded-full" src={user?.photoURL} alt="" />
                                                 <h3 className="font-bold text-center text-black text-lg">{user?.displayName}</h3>
                                                 <p className="py-4  text-center text-black">{user?.email}</p>
                                                 <div className=" text-center ">

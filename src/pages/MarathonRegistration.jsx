@@ -7,11 +7,15 @@ import { format } from "date-fns";
 
 
 const MarathonRegistration = () => {
+
+
     const marathonData = useLoaderData()
     console.log(marathonData);
     const navigate = useNavigate()
     const { user } = useContext(AuthContext);
     console.log(user?.email)
+
+
     const {
         _id,
         title,
@@ -44,6 +48,7 @@ const MarathonRegistration = () => {
         const email = form.email.value;
         const title = form.title.value;
         const marathon_Date = form.marathon_Date.value;;
+        const marathon_id = _id;
 
         console.log({
             first_name,
@@ -54,6 +59,7 @@ const MarathonRegistration = () => {
             email,
             title,
             marathon_Date,
+            marathon_id
         });
 
         const formData = {
@@ -65,7 +71,7 @@ const MarathonRegistration = () => {
             email,
             title,
             marathon_Date,
-
+            marathon_id
         };
 
         console.log(formData);
@@ -151,7 +157,7 @@ const MarathonRegistration = () => {
                             <label className="label">
                                 <span className="label-text">Email:</span>
                             </label>
-                            <input type="email" disabled={true} name="email"  className="input input-bordered" required />
+                            <input type="email" disabled={true} defaultValue={user_email} name="email" className="input input-bordered" required />
                         </div>
 
                         <div className="form-control">
@@ -171,7 +177,8 @@ const MarathonRegistration = () => {
                             </label>
                             <input type="text" name="marathon_Date"
                                 disabled={true}
-                               className="input input-bordered" required />
+                                defaultValue={format(new Date(start_Date), 'P')}
+                                className="input input-bordered" required />
                         </div>
                     </div>
 

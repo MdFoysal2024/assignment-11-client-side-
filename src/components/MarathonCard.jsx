@@ -14,10 +14,9 @@ const MarathonCard = ({ marathon }) => {
         end_Date,
         marathon_Date,
         running_distance,
-
+        createdAt
     } = marathon || {}
-
-
+  
     return (
         <div>
             <div className="card bg-gray-200 rounded-none h-[440px] ">

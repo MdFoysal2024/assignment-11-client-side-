@@ -1,39 +1,31 @@
 import axios from 'axios';
-import { format } from 'date-fns';
+import { compareAsc, format } from 'date-fns';
 import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 
 const MarathonDetails = () => {
+
+
+    //DeadLine Crose Validation---->
     //registration btn conditional state
     const [isDisabled, setIsDisabled] = useState(false);
 
-    // const registrationStartDate = new Date();
-    // const registrationEndDate = new Date();
+    useEffect(() => {
 
-    // console.log(registrationStartDate);
-    // console.log(registrationEndDate);
+        // DeadLine Crose Validation
+        if (compareAsc(new Date(), new Date(end_Date)) === 1) {
+            setIsDisabled(true);
+        } else {
+            setIsDisabled(false);
+        }
 
-    // useEffect(() => {
-    //     const today = new Date();
-
-    //     // Disable the button if the current date is outside the registration period
-    //     if (today < registrationStartDate || today > registrationEndDate) {
-    //         setIsDisabled(true);
-    //     } else {
-    //         setIsDisabled(false);
-    //     }
-    // }, []);
+    }, []);
 
 
-    const today = new Date();
-    console.log(today)
-    // if (today < start_Date || today > end_Date) {
-    //     setIsDisabled(true);
-    // } else {
-    //     setIsDisabled(false);
-    // }
+
+
 
 
 
@@ -54,14 +46,21 @@ const MarathonDetails = () => {
         running_distance,
         registration_count,
         user_email,
-        user_name
+        user_name,
+
+        createdAt
+
 
     } = marathonData || {}
 
-    console.log(user_email)
-    console.log(start_Date)
 
-    
+
+
+    console.log(user_email)
+
+
+
+
 
     return (
         <div>
@@ -94,9 +93,13 @@ const MarathonDetails = () => {
                                             {format(new Date(end_Date), 'P')}</p>
                                         <p><span className='font-bold text-lg'>Marathon Start: </span>
                                             {format(new Date(marathon_Date), 'P')}</p>
+                                        <p><span className='font-bold text-lg'>Created At Date: </span>
+                                            {format(new Date(
+                                                createdAt
+                                            ), 'P')}</p>
                                         <p><span className='font-bold text-lg'>Running Distance:  </span>
                                             {running_distance}</p>
-                                        <p><span className='font-bold  text-orange-600 text-lg'>Total Registration Count:  </span>
+                                        <p><span className='font-bold  text-orange-600 text-lg'>Total Registration :  </span>
                                             <div className="badge badge-secondary">{registration_count}</div></p>
 
 
@@ -122,7 +125,7 @@ const MarathonDetails = () => {
                 </div>
             </div>
 
-            
+
         </div>
     );
 };

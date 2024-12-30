@@ -37,22 +37,22 @@ const Carousel = () => {
                 modules={[Autoplay, Pagination, Navigation]}
                 className='mySwiper'
             >
-                <SwiperSlide>
+                <SwiperSlide >
                     <Slide
                         image={bg_img1}
-                        text='Get Your Web Development Projects Done in minutes'
+                        text='World Record and Fast Times at London Marathon'
                     />
                 </SwiperSlide>
                 <SwiperSlide>
                     <Slide
                         image={bg_img2}
-                        text='Get Your Graphics Design Projects Done in minutes'
+                        text='The Marathon is the final challenge of the Paris Olympics.'
                     />
                 </SwiperSlide>
                 <SwiperSlide>
                     <Slide
                         image={bg_img3}
-                        text='Start Your Digital Marketing Campaigns up n running'
+                        text='Kenyan Olympic Marathon Team - The Best Team Ever'
                     />
                 </SwiperSlide>
             </Swiper>
