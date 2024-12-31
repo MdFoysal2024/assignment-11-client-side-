@@ -30,6 +30,9 @@ const MarathonCard = ({ marathon }) => {
                     <h2 className=" text-left text-2xl font-bold text-blue-950 uppercase">{title}</h2>
                     <h3 className="text-lg text-gray-500 font-semibold">
                         <span className=" text-orange-600  text-xl font-bold">Registration Dates: </span> {format(new Date(start_Date), 'P')} to {format(new Date(end_Date), 'P')} </h3>
+
+                    <h3 className="text-lg text-gray-500 font-semibold">
+                        <span className=" text-orange-600  text-xl font-bold">Created Dates: </span> {format(new Date(createdAt), 'P')}  </h3>
                   
                         
 

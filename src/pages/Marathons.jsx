@@ -8,7 +8,7 @@ const Marathons = () => {
     const [marathons, setMarathons] = useState([]);
     //console.log(marathons);
 
-    const [sortData, setSortData] = useState('')
+    const [sort, setSort] = useState('')
 
     const [search, setSearch] = useState('');
 
@@ -34,14 +34,14 @@ const Marathons = () => {
 
         // Used axios for advance & shortcut data loading system--->
         const fetchAllMarathons = async () => {
-            const { data } = await axios.get(`http://localhost:5000/all-marathons?search=${search}`)
+            const { data } = await axios.get(`http://localhost:5000/all-marathons?search=${search}&sort=${sort}`)
 
             setMarathons(data)
         }
 
         fetchAllMarathons()
 
-    }, [search])
+    }, [search, sort])
 
     //console.log(marathons);
 
@@ -79,13 +79,26 @@ const Marathons = () => {
 
 
 
-            <div className='flex justify-end'>
+            {/* <div className='flex justify-end'>
 
                 <button
                     // onClick={() => handleSort('createdAt')}
                     className="btn  bg-orange-600 hover:bg-orange-800 mb-6 text-white text-lg">Sort By (Created At)</button>
-            </div>
+            </div> */}
 
+
+            <div className='flex justify-end '>
+                <select
+                    name='category'
+                    id='category'
+                    onChange={e => setSort(e.target.value)}
+                    className='border p-4 mb-8 rounded-md font-bold bg-orange-600 text-white '
+                >
+                    <option value=''>Sort By CreatedAt</option>
+                    <option value='dsc'>Descending Order</option>
+                    <option value='asc'>Ascending Order</option>
+                </select>
+            </div>
 
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>

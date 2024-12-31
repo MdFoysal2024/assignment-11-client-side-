@@ -74,9 +74,9 @@ const Home = () => {
                 </div>
                 <div>
 
-                    <p className='text-gray-800 italic text-xl'>Why You Should Join Us</p>
+                    <p className=' italic text-xl font-bold text-orange-600'>Why You Should Join Us</p>
                     <h2 className='text-5xl font-bold italic py-8 mb-4'>Run unintentionally, and feel the difference</h2>
-                    <p className='text-gray-500'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                    <p className='text-gray-500'>Marathon never fails to deliver. Arguably one of the fastest marathon courses in the world, and inarguably the richest marathon in the world. consectetur adipiscing elit. </p>
 
 
 
