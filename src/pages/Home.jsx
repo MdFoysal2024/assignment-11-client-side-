@@ -13,12 +13,16 @@ const Home = () => {
     const [marathons, setMarathons] = useState([]);
 
     useEffect(() => {
+
+
         fetch('https://marathon-events-server.vercel.app/marathons')
             .then(res => res.json())
             .then(data => {
                 // console.log(data)
                 setMarathons(data)
             })
+
+            
     }, [])
 
     //console.log(marathons);

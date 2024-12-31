@@ -4,6 +4,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
+import { CountdownCircleTimer } from 'react-countdown-circle-timer'
+import Display from './Display';
 
 const MarathonDetails = () => {
 
@@ -59,6 +61,33 @@ const MarathonDetails = () => {
     console.log(user_email)
 
 
+    // ----------------countdown---------->
+    const endTime = new Date(end_Date).getTime();
+    const [currentTime, setcurrentTime] = useState(new Date().getTime());
+    const gap = endTime - currentTime; //177670892
+
+    const seconds = 1000; // in milliseconds
+    const minutes = seconds * 60;
+    const hours = minutes * 60;
+    const days = hours * 24;
+
+    const remainingDays = Math.floor(gap / days);
+    const remainingHours = Math.floor((gap % days) / hours);
+    const remainingMinutes = Math.floor((gap % hours) / minutes);
+    const remainingSeconds = Math.floor((gap % minutes) / seconds);
+
+    useEffect(() => {
+        setTimeout(() => setcurrentTime(new Date().getTime()), 1000);
+    }, [currentTime]) // 11:30:55
+
+
+
+
+
+
+
+
+
 
 
 
@@ -88,15 +117,30 @@ const MarathonDetails = () => {
                                         {description}
                                     </p>
                                     <div className='flex flex-col space-y-2 pb-4 justify-between'>
-                                        <p><span className='font-bold text-lg'>Registration Start: </span>{format(new Date(start_Date), 'P')}</p>
-                                        <p><span className='font-bold text-lg'>Registration End: </span>
-                                            {format(new Date(end_Date), 'P')}</p>
-                                        <p><span className='font-bold text-lg'>Marathon Start: </span>
-                                            {format(new Date(marathon_Date), 'P')}</p>
-                                        <p><span className='font-bold text-lg'>Created At Date: </span>
-                                            {format(new Date(
-                                                createdAt
-                                            ), 'P')}</p>
+                                        <div className='flex justify-between'>
+                                            {/* date section */}
+                                            <div>
+
+                                                <p><span className='font-bold text-lg'>Registration Start: </span>{format(new Date(start_Date), 'P')}</p>
+                                                <p><span className='font-bold text-lg'>Registration End: </span>
+                                                    {format(new Date(end_Date), 'P')}</p>
+                                                <p><span className='font-bold text-lg'>Marathon Start: </span>
+                                                    {format(new Date(marathon_Date), 'P')}</p>
+                                                <p><span className='font-bold text-lg'>Created At Date: </span>
+                                                    {format(new Date(
+                                                        createdAt
+                                                    ), 'P')}</p>
+                                            </div>
+
+                                          
+
+                                          
+
+
+                                        </div>
+
+
+
                                         <p><span className='font-bold text-lg'>Running Distance:  </span>
                                             {running_distance}</p>
                                         <p><span className='font-bold  text-orange-600 text-lg'>Total Registration :  </span>
@@ -105,14 +149,32 @@ const MarathonDetails = () => {
 
                                         <Link to={`/marathonRegistration/${_id}`}>
 
-                                            <button className=' btn w-full font-bold text-lg text-white bg-orange-600 hover:bg-orange-800' disabled={isDisabled}>
+                                            <button className='mb-6 btn w-full font-bold text-lg text-white bg-orange-600 hover:bg-orange-800' disabled={isDisabled}>
                                                 {isDisabled ? "Registration Closed" : "Register Now"}
                                             </button>
                                         </Link>
                                         {/* <button className=' btn w-full bg-orange-600 hover:bg-orange-800 font-bold text-lg text-white '>Registration</button> */}
 
 
+                                        {/* // -----------countdown----------> */}
+                                        <div>
+                                            <center>
 
+
+
+                                                <Display
+                                                    days={remainingDays}
+                                                    hours={remainingHours} 
+                                                    minutes={remainingMinutes}
+                                                    seconds={remainingSeconds}
+                                                    disabled={isDisabled}
+
+                                                >
+
+                                                </Display>
+
+                                            </center>
+                                        </div>
 
 
                                     </div>
