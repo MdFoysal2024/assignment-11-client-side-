@@ -12,6 +12,7 @@ import Marathons from "../pages/Marathons"
 import UpdateMarathon from "../components/UpdateMarathon"
 import MarathonDetails from "../pages/MarathonDetails"
 import MarathonRegistration from "../pages/MarathonRegistration"
+import UpdateApplication from "../components/UpdateApplication"
 
 
 const router = createBrowserRouter([
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
             {
                 path: '/update_Marathon/:id',
                 element: <UpdateMarathon></UpdateMarathon>,
+            },
+            {
+                path: '/update_application/:id',
+                element: <UpdateApplication></UpdateApplication>,
             },
             {
                 path: '/marathonRegistration/:id',

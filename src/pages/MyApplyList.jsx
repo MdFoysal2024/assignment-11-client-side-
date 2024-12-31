@@ -62,79 +62,6 @@ const MyApplyList = () => {
 
 
 
-    //Application Update functionality
-
-
-    const handleUpdateApplication = async (e) => {
-
-        console.log('Update Application')
-        e.preventDefault();
-        const form = e.target;
-
-        const first_name = form.first_name.value;
-        const last_name = form.last_name.value;
-        const contact_number = form.contact_number.value;
-        const runner_age = form.runner_age.value;
-        const location = form.location.value;
-        const email = form.email.value;
-        const title = form.title.value;
-        const marathon_Date = form.marathon_Date.value;;
-
-        console.log({
-            first_name,
-            last_name,
-            contact_number,
-            runner_age,
-            location,
-            email,
-            title,
-            marathon_Date,
-        });
-
-        const formData = {
-            first_name,
-            last_name,
-            contact_number,
-            runner_age,
-            location,
-            email,
-            title,
-            marathon_Date,
-
-        };
-
-        console.log(formData);
-
-
-
-        // try {
-        //     //data post request--->
-        //     
-        //     await axios.post('https://marathon-events-server.vercel.app/updateApplication/', formData)
-
-        //     //form reset--->
-        //     //   form.reset();
-
-        //     //show toast & navigate to my-posted-jobs route --->
-        //     toast.success('Application Update Successfully!!!');
-
-
-        // }
-
-        // catch (err) {
-        //     console.log(err);
-        //     //toast.error('Something went wrong!!!');
-        //     toast.error(err.message);
-        // }
-
-
-
-    }
-
-
-
-
-
 
     //Application Delete functionality
     const handleDelete = _id => {
@@ -248,147 +175,16 @@ const MyApplyList = () => {
 
 
 
-                                    <td className='flex' to={`${apply._id}`}>
-
-                                        <button className="btn text-blue-950 text-lg"
-                                            onClick={() => document.getElementById('my_modal_1').showModal()}
-                                        ><GrEdit /></button>
+                                    <td className='flex'>
 
 
-                                        {/* Open the modal using document.getElementById('ID').showModal() method */}
+                                        <Link to={`/update_application/${apply._id}`}>
 
-                                        <dialog id="my_modal_1" className="modal w-[640px] mx-auto ">
-                                            <div className="modal-box flex items-end gap-4 pl-8">
+                                            <button className="btn text-blue-950 text-lg"
+                                                
+                                            ><GrEdit /></button>
+                                        </Link>
 
-
-                                                <form onSubmit={handleUpdateApplication} className='space-y-4'>
-
-                                                    <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 mb-8'>
-
-                                                        <div className="form-control">
-                                                            <label className="label">
-                                                                <span className="label-text">First Name:</span>
-                                                            </label>
-
-                                                            <input type="text" name="first_name" className="input input-bordered"
-
-                                                                placeholder='First Name' required />
-                                                        </div>
-
-                                                        <div className="form-control">
-                                                            <label className="label">
-                                                                <span className="label-text">Last Name:</span>
-                                                            </label>
-                                                            <input type="text" name="last_name" placeholder="Last Name" className="input input-bordered" required />
-                                                        </div>
-
-                                                        <div className="form-control">
-                                                            <label className="label">
-                                                                <span className="label-text">Contact Number:</span>
-                                                            </label>
-                                                            <input type="number" name="contact_number" placeholder="Your Contact Number Here..." className="input pr-8 input-bordered" required />
-                                                        </div>
-
-                                                        <div className="form-control">
-                                                            <label className="label">
-                                                                <span className="label-text">Age Of Runners:</span>
-                                                            </label>
-                                                            <input type="number" name="runner_age" placeholder="Your age here" className="input pr-8 input-bordered" required />
-                                                        </div>
-
-                                                        <div className="form-control">
-                                                            <label className="label">
-                                                                <span className="label-text">Location:</span>
-                                                            </label>
-                                                            <input type="text" name="location" placeholder="Your Location Number Here..." className="input pr-8 input-bordered" required />
-                                                        </div>
-
-                                                        <div className="form-control">
-                                                            <label className="label">
-                                                                <span className="label-text">Email:</span>
-                                                            </label>
-
-                                                            <input type="email" disabled={true}
-                                                                defaultValue={user.email}
-                                                                name="email" className="input input-bordered" required />
-                                                        </div>
-
-                                                        <div className="form-control">
-                                                            <label className="label">
-                                                                <span className="label-text">Marathon Title:</span>
-                                                            </label>
-                                                            {/* defaultValue={title} */}
-                                                            <input type="text"
-                                                                name="title"
-                                                                defaultValue={`${apply.title}`}
-                                                                // disabled={true}
-                                                                className="input input-bordered" required />
-                                                        </div>
-
-
-                                                        {/* defaultValue={format(new Date(apply.marathon_Date), 'P')}  */}
-                                                        <div className="form-control">
-                                                            <label className="label">
-                                                                <span className="label-text">Marathon Start Date:</span>
-                                                            </label>
-                                                            <input type="text" name="marathon_Date"
-                                                                disabled={true}
-                                                                defaultValue={format(new Date(apply.marathon_Date), 'P')}
-                                                                className="input input-bordered" required />
-                                                        </div>
-                                                    </div>
-
-
-                                                    {/* <div className="form-control " >
-                                                        <button className="btn  bg-orange-600 hover:bg-orange-800 text-white text-lg">Apply Now</button>
-
-                                                        <div className="modal-action  flex justify-center " type='submit'>
-                                                            <form method="dialog">
-                                                    
-                                                                <button className="btn  bg-blue-950 px-12 hover:bg-orange-800 text-white  text-lg">Close</button>
-                                                            </form>
-                                                        </div>
-
-                                                    </div> */}
-
-                                                    <div className="modal-action">
-                                                        <button
-                                                            className="btn btn-primary"
-                                                            onClick={() => {
-                                                                // Add save logic here
-                                                                // alert('Saved!');
-                                                                document.getElementById('my_modal_1').close();
-                                                            }}
-                                                        >
-                                                            Update
-                                                        </button>
-
-                                                    </div>
-
-                                                    {/* <div className="form-control " >
-
-                                                        <div className="modal-action  flex justify-center " type='submit'>
-                                                            <form method="dialog">
-                                                                
-                                                                <button className="btn  bg-orange-600 hover:bg-orange-800 text-white  text-lg">Apply Now</button>
-                                                            </form>
-                                                        </div>
-
-                                                    </div> */}
-
-                                                </form >
-                                                <div className='flex justify-center '>
-
-                                                    <button
-                                                        className="btn btn-secondary btn-end"
-                                                        onClick={() => document.getElementById('my_modal_1').close()}
-                                                    >
-                                                        Cancel
-                                                    </button>
-                                                </div>
-
-                                            </div>
-                                        </dialog>
 
 
 
