@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import MarathonCard from '../components/MarathonCard';
 import axios from 'axios';
 import { FaSearch } from 'react-icons/fa';
+import { Helmet } from 'react-helmet';
 
 const Marathons = () => {
 
@@ -51,7 +52,11 @@ const Marathons = () => {
 
     return (
         <div className='container mx-aut  my-16'>
-
+<Helmet>
+                <meta charSet="utf-8" />
+                <title>Marathon Page</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
 
 
             <div className='text-center space-y-4'>

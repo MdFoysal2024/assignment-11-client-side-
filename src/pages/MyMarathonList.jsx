@@ -109,7 +109,7 @@ const MyMarathonList = () => {
                 <table className="table">
                     {/* head */}
                     <thead>
-                        <tr className='bg-slate-500 text-lg text-white '>
+                        <tr className='bg-orange-600 text-lg text-white '>
                             <th className='py-6 pl-8'>No</th>
 
                             <th>Name</th>
@@ -143,7 +143,7 @@ const MyMarathonList = () => {
                                         </Link>
                                         <button
                                             onClick={() => handleDelete(marathon._id)}
-                                            className="btn ml-2 text-xl"><MdDeleteForever /></button>
+                                            className="btn ml-2 text-xl text-red-600"><MdDeleteForever /></button>
                                     </td>
 
                                 </tr>

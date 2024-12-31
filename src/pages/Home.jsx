@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { FaLocationDot, FaPersonRunning } from 'react-icons/fa6';
 import { FaCalendarAlt } from 'react-icons/fa';
 import { HiBadgeCheck } from "react-icons/hi";
+import { Helmet } from 'react-helmet';
 
 
 const Home = () => {
@@ -46,6 +47,12 @@ const Home = () => {
 
     return (
         <div>
+
+<Helmet>
+                <meta charSet="utf-8" />
+                <title>Home Page</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
             <Carousel></Carousel>
 
             {/* Running Marathon Section */}

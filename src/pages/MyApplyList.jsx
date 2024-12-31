@@ -195,7 +195,7 @@ const MyApplyList = () => {
 
                                         <button
                                             onClick={() => handleDelete(apply._id)}
-                                            className="btn ml-2 text-red-500 text-xl"><MdDeleteForever /></button>
+                                            className="btn ml-2 text-red-600 text-xl"><MdDeleteForever /></button>
                                     </td>
 
                                 </tr>
