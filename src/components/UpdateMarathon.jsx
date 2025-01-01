@@ -27,7 +27,7 @@ const UpdateMarathon = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/marathonData/${id}`)
+        fetch(`https://marathon-events-server.vercel.app/marathonData/${id}`)
             .then(res => res.json())
             .then(data => {
                 setUpdateMarathon(data)
@@ -74,7 +74,7 @@ const UpdateMarathon = () => {
 
 
 
-        fetch(`http://localhost:5000/updateMarathon/${id}`, {
+        fetch(`https://marathon-events-server.vercel.app/updateMarathon/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

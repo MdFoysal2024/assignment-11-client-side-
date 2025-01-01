@@ -2,9 +2,7 @@ Website Name: Marathon Event Project.
 
 Project Live site URL: 
 
-* FireBase Hosting URL: 
-* Netlify Live Link: 
-
+* FireBase Hosting URL: https://marathon-events-management.web.app/
 
 
 Website Feature:

@@ -40,7 +40,7 @@ const router = createBrowserRouter([
                         <Marathons></Marathons>
                     </PrivateRoute>
                 ),
-                loader:()=> fetch('http://localhost:5000/marathon_count')
+                loader:()=> fetch('https://marathon-events-server.vercel.app/marathon_count')
             },
             {
                 path: '/add_marathons',
@@ -81,7 +81,7 @@ const router = createBrowserRouter([
                         <MarathonRegistration></MarathonRegistration>
                     </PrivateRoute>),
                     loader: async ({ params }) => {
-                        const paramsData = await fetch("http://localhost:5000/marathons")
+                        const paramsData = await fetch("https://marathon-events-server.vercel.app/marathons")
                         const data = await paramsData.json();
                         const singleData = data.find(d => d._id == params.id)
                         return singleData;
@@ -95,7 +95,7 @@ const router = createBrowserRouter([
                     </PrivateRoute>
                 ),
                 loader: async ({ params }) => {
-                    const paramsData = await fetch("http://localhost:5000/marathons")
+                    const paramsData = await fetch("https://marathon-events-server.vercel.app/marathons")
                     const data = await paramsData.json();
                     const singleData = data.find(d => d._id == params.id)
                     return singleData;

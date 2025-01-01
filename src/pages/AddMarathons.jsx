@@ -80,7 +80,7 @@ const AddMarathons = () => {
         try {
             //data post request--->
             //await axios.post(`${import.meta.env.VITE_API_URL}/add-job`, formData)
-            await axios.post('http://localhost:5000/marathons', formData)
+            await axios.post('https://marathon-events-server.vercel.app/marathons', formData)
 
             //form reset--->
             //   form.reset();

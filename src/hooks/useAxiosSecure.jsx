@@ -5,8 +5,8 @@ import axios from "axios";
 
 
 const axiosInstance = axios.create({
-    // baseURL: 'http://localhost:5000',
-    baseURL: 'http://localhost:5000',
+    
+    baseURL: 'https://marathon-events-server.vercel.app',
     withCredentials: true
 })
 
@@ -32,7 +32,7 @@ const useAxiosSecure = () => {
                 console.log('Log Out the User');
 
 
-                // user logout documentation-------->
+                // user logout documentation when token is unMatch/edited-------->
 
                 logOut()
                     .then(() => {

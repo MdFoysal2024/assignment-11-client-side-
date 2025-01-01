@@ -39,7 +39,7 @@ const MyApplyList = () => {
 
         // 1. normal data fetching---------------------------->
 
-        // fetch(`http://localhost:5000/myApplyList?email=${user?.email}`)
+        // fetch(`https://marathon-events-server.vercel.app/myApplyList?email=${user?.email}`)
         //     .then(res => res.json())
         //     .then(data => {
         //         console.log(data)
@@ -55,7 +55,7 @@ const MyApplyList = () => {
         // Used axios for advance & shortcut data loading system--->
 
         // const fetchAllMarathons = async () => {
-        //     const { data } = await axios.get(`http://localhost:5000/myApplyList?email=${user?.email}&search=${search}`, {
+        //     const { data } = await axios.get(`https://marathon-events-server.vercel.app/myApplyList?email=${user?.email}&search=${search}`, {
         //         withCredentials: true
         //     })
         //     setMarathonApply(data)
@@ -101,7 +101,7 @@ const MyApplyList = () => {
                 if (result.isConfirmed) {
 
                     console.log('Delete Confirmed');
-                    fetch(`http://localhost:5000/deleteApplication/${_id}`, {
+                    fetch(`https://marathon-events-server.vercel.app/deleteApplication/${_id}`, {
                         method: "DELETE",
 
                     })

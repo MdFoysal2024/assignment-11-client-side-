@@ -16,7 +16,7 @@ const Home = () => {
     useEffect(() => {
 
 
-        fetch('http://localhost:5000/marathons')
+        fetch('https://marathon-events-server.vercel.app/marathons')
             .then(res => res.json())
             .then(data => {
                 // console.log(data)

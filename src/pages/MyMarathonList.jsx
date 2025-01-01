@@ -18,7 +18,7 @@ const MyMarathonList = () => {
     useEffect(() => {
 
 
-        // fetch(`http://localhost:5000/myMarathonList?email=${user.email}`)
+        // fetch(`https://marathon-events-server.vercel.app/myMarathonList?email=${user.email}`)
         //     .then(res => res.json())
         //     .then(data => {
         //         setMarathons(data)
@@ -63,7 +63,7 @@ const MyMarathonList = () => {
                 if (result.isConfirmed) {
 
                     console.log('Delete Confirmed');
-                    fetch(`http://localhost:5000/deleteMarathon/${_id}`, {
+                    fetch(`https://marathon-events-server.vercel.app/deleteMarathon/${_id}`, {
                         method: "DELETE",
 
                     })

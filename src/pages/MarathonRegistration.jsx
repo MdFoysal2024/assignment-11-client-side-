@@ -81,7 +81,7 @@ const MarathonRegistration = () => {
         try {
             //data post request--->
             //await axios.post(`${import.meta.env.VITE_API_URL}/add-job`, formData)
-            await axios.post('http://localhost:5000/marathonApply', formData)
+            await axios.post('https://marathon-events-server.vercel.app/marathonApply', formData)
 
             //form reset--->
             //   form.reset();
@@ -157,7 +157,7 @@ const MarathonRegistration = () => {
                             <label className="label">
                                 <span className="label-text">Email:</span>
                             </label>
-                            <input type="email" disabled={true} defaultValue={user_email} name="email" className="input input-bordered" required />
+                            <input type="email" disabled={true} defaultValue={user?.email} name="email" className="input input-bordered" required />
                         </div>
 
                         <div className="form-control">

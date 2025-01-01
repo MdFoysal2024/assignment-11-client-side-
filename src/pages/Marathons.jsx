@@ -103,7 +103,7 @@ const Marathons = () => {
 
 
     useEffect(() => {
-        // fetch('http://localhost:5000/all-marathons')
+        // fetch('https://marathon-events-server.vercel.app/all-marathons')
         //     .then(res => res.json())
         //     .then(data => {
         //         //console.log(data)
@@ -119,7 +119,7 @@ const Marathons = () => {
 
         // Used axios for advance & shortcut data loading system--->
         const fetchAllMarathons = async () => {
-            const { data } = await axios.get(`http://localhost:5000/all-marathons?search=${search}&sort=${sort}&page=${currentPage}&size=${itemsPerPage}`)
+            const { data } = await axios.get(`https://marathon-events-server.vercel.app/all-marathons?search=${search}&sort=${sort}&page=${currentPage}&size=${itemsPerPage}`)
             console.log(data)
             setMarathons(data)
         }
