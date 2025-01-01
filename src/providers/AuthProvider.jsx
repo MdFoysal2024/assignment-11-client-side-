@@ -69,7 +69,7 @@ const AuthProvider = ({ children }) => {
 
                 //-----------> jwt token create documentation-->
 
-                axios.post('https://marathon-events-server.vercel.app/jwt', user, {
+                axios.post('http://localhost:5000/jwt', user, {
                     withCredentials: true
                 })
                     .then(res => {
@@ -82,7 +82,7 @@ const AuthProvider = ({ children }) => {
 
                 //---> jwt token remove documentation ‍after logout--->
 
-                axios.post('https://marathon-events-server.vercel.app/logout', {}, {
+                axios.post('http://localhost:5000/logout', {}, {
                     withCredentials: true
                 })
                     .then(res => {

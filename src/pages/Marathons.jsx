@@ -3,8 +3,94 @@ import MarathonCard from '../components/MarathonCard';
 import axios from 'axios';
 import { FaSearch } from 'react-icons/fa';
 import { Helmet } from 'react-helmet';
+import { useLoaderData } from 'react-router-dom';
+import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
 
 const Marathons = () => {
+
+
+    //--------pagination start from here------->
+
+    //total number of marathon get from server side
+    const { count } = useLoaderData()
+    console.log(count)
+
+
+    // const itemsPerPage = 6;
+    // itemsPerPage  এর 6 ভেলু কে useState এ রেখে
+    const [itemsPerPage, setItemsPerPage] = useState(6)
+
+    //whose page stay now
+    //default page (0)/first page 
+    const [currentPage, setCurrentPage] = useState(0)
+
+    const numberOfPages = Math.ceil(count / itemsPerPage);
+
+
+    //-----for looooooping-->
+    // const pages = [];
+    // for (let i = 0; i < numberOfPages; i++) {
+    //     pages.push(i)
+    // }
+    // console.log(pages)
+
+
+    //for loop  টাকে ভিন্ন ভাবে এক লাইনে করা যায় --> output same
+
+    const pages = [...Array(numberOfPages).keys()];
+    console.log(pages)
+
+    // select option for pagination-->
+
+    // const handleItemPerPage = e => {
+
+    //     //console.log(e.target.value);
+    //     const val = parseInt(e.target.value);
+    //     console.log(val);
+    //     setItemsPerPage(val);
+
+    //     //default page or reload for (0)/first page 
+    //     setCurrentPage(0)
+
+    // }
+
+
+
+
+
+
+
+
+
+    
+    
+    //Prev Page btn functionality-->
+
+    const handlePrevPage = () => {
+        if (currentPage > 0) {
+            setCurrentPage(currentPage - 1)
+        }
+    }
+
+
+    //Next Page btn functionality-->
+
+    const handleNextPage = () => {
+        if (currentPage < pages.length - 1) {
+            // pages.length-1 -->  -1  না দিয়ে একটা পেইজ অতিরিক্ত চলে যায়
+
+            setCurrentPage(currentPage + 1)
+        }
+    }
+
+
+
+
+    //--------pagination end here------->
+
+
+
+
 
     const [marathons, setMarathons] = useState([]);
     //console.log(marathons);
@@ -13,18 +99,11 @@ const Marathons = () => {
 
     const [search, setSearch] = useState('');
 
-    // const handleSort = sortBy => {
-    //     if (sortBy == 'createdAt') {
-    //         const sorted = [...sortData].sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
-    //         setSortData(sorted)
-    //         console.log(sorted, 12)
-    //     }
 
-    // }
 
 
     useEffect(() => {
-        // fetch('https://marathon-events-server.vercel.app/all-marathons')
+        // fetch('http://localhost:5000/all-marathons')
         //     .then(res => res.json())
         //     .then(data => {
         //         //console.log(data)
@@ -33,16 +112,21 @@ const Marathons = () => {
 
 
 
+
+        //----Main API Url change for pagination and create a dynamice api url--> 
+
+        //ক্লাইন সাইট হতে page, size এর ডায়নামিক মান সার্ভারে যাবে, আর সে অনুযায়ী ডায়নামিক পেইজে ডায়নামিক ডাটা লোড হবে। আর এটাই হলো পেইজিনেশন। 
+
         // Used axios for advance & shortcut data loading system--->
         const fetchAllMarathons = async () => {
-            const { data } = await axios.get(`http://localhost:5000/all-marathons?search=${search}&sort=${sort}`)
-
+            const { data } = await axios.get(`http://localhost:5000/all-marathons?search=${search}&sort=${sort}&page=${currentPage}&size=${itemsPerPage}`)
+            console.log(data)
             setMarathons(data)
         }
 
         fetchAllMarathons()
 
-    }, [search, sort])
+    }, [search, sort, currentPage, itemsPerPage]) //<------dependency setup----->
 
     //console.log(marathons);
 
@@ -52,7 +136,7 @@ const Marathons = () => {
 
     return (
         <div className='container mx-aut  my-16'>
-<Helmet>
+            <Helmet>
                 <meta charSet="utf-8" />
                 <title>Marathon Page</title>
                 <link rel="canonical" href="http://mysite.com/example" />
@@ -111,6 +195,56 @@ const Marathons = () => {
                     marathons.map(marathon => <MarathonCard key={marathon._id} marathon={marathon}></MarathonCard>)
                 }
             </div>
+
+            {/* //--------pagination start from here-------> */}
+
+            <div className='flex justify-center my-12 items-center gap-4'>
+                {/* <p>Pagination</p> */}
+
+
+
+                <button
+                    className='pagination mr-6 text-orange-600'
+                    onClick={handlePrevPage}><FaArrowLeftLong /></button>
+
+                <div className='pagination'>
+                    {
+                        pages.map((page, indx) =>
+
+                            <button
+                                key={page}
+                                // key={indx}
+                                //Click করলে setCurrentPage এর ভিতরে page এর মান সেট হবে।
+                                onClick={() => setCurrentPage(page)}
+                                className={currentPage === page && 'selected'}
+
+
+                            //page + 1 -->0 থেকে শুরু না হয়ে 1 থেকে শুরু হবে।
+                            >{page}</button>
+                        )
+                    }
+                </div>
+
+                <button
+                    className='pagination  text-orange-600'
+                    onClick={handleNextPage}><FaArrowRightLong /></button>
+
+                {/* <select value={itemsPerPage}
+                    name="" id=""
+                    className='border-2 border-black'
+                    onChange={handleItemPerPage}
+                >
+                    <option value="3">3</option>
+                    <option value="6">6</option>
+                    <option value="9">9</option>
+                </select> */}
+
+
+            </div>
+
+
+
+
         </div>
     );
 };

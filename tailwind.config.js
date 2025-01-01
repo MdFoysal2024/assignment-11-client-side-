@@ -20,6 +20,7 @@ export default {
   ],
   daisyui: {
     themes: ["light", "retro"],
+    
   },
 }
 
