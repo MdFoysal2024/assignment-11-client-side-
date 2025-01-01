@@ -17,3 +17,4 @@ Website Feature:
 * Firebase Authentication
 * JWT Authentication
 * Used Many React npm packages
+* like react-datepicker, mamba Ui, daisyui, react framer motion etc. 
