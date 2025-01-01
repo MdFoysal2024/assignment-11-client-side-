@@ -28,10 +28,8 @@ const MyMarathonList = () => {
         //const axiosSecure = useAxiosSecure() ------>custom hook উপরে আছে
 
         axiosSecure.get(`/myMarathonList?email=${user.email}`)
-            .then(res => {
-                console.log(setMarathons(res.data))
-            })
-
+            .then(res => setMarathons(res.data))
+            
 
     }, [user.email])
     //console.log(marathons)
@@ -101,7 +99,7 @@ const MyMarathonList = () => {
             </Helmet>
             <h2 className='text-center pb-12 text-5xl font-bold'>
 
-                My <span className='text-orange-600'>Marathon</span> Page
+                My <span className='text-orange-600'>Marathon</span> List
             </h2>
 
             {/* user info({users.length}) */}

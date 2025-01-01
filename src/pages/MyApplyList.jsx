@@ -9,13 +9,14 @@ import toast from 'react-hot-toast';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { FaSearch } from 'react-icons/fa';
-//import useAxiosSecure from '../hooks/useAxiosSecure';
+import useAxiosSecure from '../hooks/useAxiosSecure';
+
 
 const MyApplyList = () => {
     //myApplyList
 
 
-    //const axiosSecure = useAxiosSecure();
+    const axiosSecure = useAxiosSecure();
 
     const [marathonApply, setMarathonApply] = useState([]);
     const { user } = useContext(AuthContext);
@@ -27,6 +28,16 @@ const MyApplyList = () => {
 
     useEffect(() => {
 
+        // Three rules in data fetching-------->
+        // 1. normal data fetching
+        // 2. axios data fetching
+        // 3. axiosSecure data fetching by custom hooks
+
+
+
+
+
+        // 1. normal data fetching---------------------------->
 
         // fetch(`http://localhost:5000/myApplyList?email=${user?.email}`)
         //     .then(res => res.json())
@@ -37,22 +48,33 @@ const MyApplyList = () => {
 
 
 
+
+
+        // 2. axios data fetching----------------------------->
+
         // Used axios for advance & shortcut data loading system--->
 
-        const fetchAllMarathons = async () => {
-            const { data } = await axios.get(`http://localhost:5000/myApplyList?email=${user?.email}&search=${search}`)
-            setMarathonApply(data)
-        }
+        // const fetchAllMarathons = async () => {
+        //     const { data } = await axios.get(`http://localhost:5000/myApplyList?email=${user?.email}&search=${search}`, {
+        //         withCredentials: true
+        //     })
+        //     setMarathonApply(data)
+        // }
 
-        fetchAllMarathons()
+        // fetchAllMarathons()
 
 
 
-        // axiosSecure.get(`/myApplyList?email=${user?.email}`)
-        // .then(res => {
-        //     console.log(setMarathonApply(res.data))
+
+
+        // 3. axiosSecure data fetching by custom hooks------------------->
+
+        //custom hooks এর ভিতরে থাকা axios এর axiosSecure  ব্যবহার করে আরো আপডেট ও শর্টকাট করে ডাটা ফেচিং, custom hooks এর axiosSecure এর ভিতরে  withCredentials: true এবং localhost:5000 এর base url দেওয়া আছে যা সব জায়গাতে ব্যবহার করা যাবে আর এটাই custom hooks এর সুবিধা.
+
+        axiosSecure.get(`/myApplyList?email=${user?.email}&search=${search}`)
+            .then(res => setMarathonApply(res.data))
         //     console.log(res.data.data)
-        // })
+
 
 
     }, [user?.email, search])
@@ -117,7 +139,7 @@ const MyApplyList = () => {
             </Helmet>
             <h2 className='text-center pb-12 text-5xl font-bold'>
 
-                My <span className='text-orange-600'>Marathon Apply</span> Page
+                My <span className='text-orange-600'>Marathon Apply</span> List
             </h2>
 
 
@@ -181,7 +203,7 @@ const MyApplyList = () => {
                                         <Link to={`/update_application/${apply._id}`}>
 
                                             <button className="btn text-blue-950 text-lg"
-                                                
+
                                             ><GrEdit /></button>
                                         </Link>
 

@@ -93,7 +93,7 @@ const Login = () => {
 
         <div className='container mx-auto items-center  justify-center  w-full flex flex-col md:flex-row lg:flex-row '>
 
-            <div className=' w-[520px] space-y-4 p-12  my-12 bg-pink-200 shadow-lg '>
+            <div className=' w-[520px] space-y-4 p-12  my-12 bg-pink-100 shadow-lg '>
                 <Helmet>
                     <meta charSet="utf-8" />
                     <title>Login Page</title>
@@ -158,7 +158,7 @@ const Login = () => {
 
 
                     <div className="form-control mt-6">
-                        <button className="btn bg-orange-600 text-white text-lg">LOGIN</button>
+                        <button className="btn bg-orange-600 hover:bg-orange-800 text-white text-lg">LOGIN</button>
                     </div>
                 </form >
 

@@ -104,7 +104,7 @@ const MarathonDetails = () => {
 
                                 <img
                                     src={marathon_img}
-                                    className=" w-full p-12" />
+                                    className=" w-[520px]  md:w-[640px]  p-12" />
                             </div>
                             <div className='lg:w-1/2 px-6'>
                                 <div className='space-y-4'>
