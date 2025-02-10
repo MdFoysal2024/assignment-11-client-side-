@@ -56,12 +56,6 @@ Join us and take the next step in your running journey!
 
 
 ## ✨ Features
-- **🌍 Global Campaigns** – Create, manage, and support campaigns from anywhere.
-- **💳 Secure Payments** – Integrated payment gateways to ensure smooth transactions.
-- **📣 Social Sharing** – Share campaigns easily on social media platforms.
-- **📊 Campaign Analytics** – Track campaign performance with real-time insights.
-- **🎨 Modern UI/UX** – Built with React, TailwindCSS, and DaisyUI for an intuitive experience.
-
 
 - 🌍 Discover and register for marathons worldwide
 - 📆 View upcoming marathon schedules
@@ -70,8 +64,6 @@ Join us and take the next step in your running journey!
 - 🏃‍♂️ Engage with a community of passionate runners
 - ⚡ Fast and seamless event registration
 - 📱 Mobile-friendly, modern UI powered by **React & TailwindCSS**
-
-
 
 
   ---
@@ -139,11 +131,9 @@ VITE_appId=your_app_id
 ## 🎮 Usage
 
 ```
-1. Create an account or log in to start a campaign.
-2. Set up a funding campaign with title, description, goal, and images.
-3. Share your campaign with your network via social media.
-4. Track your campaign performance and engage with backers.
-5. Withdraw funds securely once the campaign is complete.
+- Open http://localhost:5173/ in your browser.
+- Register for an account and browse upcoming marathon events.
+- Track progress, get race updates, and connect with other runners.
 ```
 ---
 
