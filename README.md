@@ -32,7 +32,7 @@ Website Feature:
 
 
 
-**🏃‍♂️Marathon Events** is a premier online platform dedicated to organizing and promoting marathon races worldwide. Whether you're a professional athlete, a fitness enthusiast, or a first-time runner, our platform connects you with exciting running events in your city and beyond.
+**🏃‍♂️ Marathon Events** is a premier online platform dedicated to organizing and promoting marathon races worldwide. Whether you're a professional athlete, a fitness enthusiast, or a first-time runner, our platform connects you with exciting running events in your city and beyond.
 
 Discover upcoming marathons, register for races, track your progress, and engage with a community of passionate runners. With seamless event registration, training tips, and real-time race updates, Marathon Events is your go-to destination for all things running.
 
@@ -61,6 +61,18 @@ Join us and take the next step in your running journey!
 - **📣 Social Sharing** – Share campaigns easily on social media platforms.
 - **📊 Campaign Analytics** – Track campaign performance with real-time insights.
 - **🎨 Modern UI/UX** – Built with React, TailwindCSS, and DaisyUI for an intuitive experience.
+
+
+- 🌍 Discover and register for marathons worldwide
+- 📆 View upcoming marathon schedules
+- 📊 Track your running progress
+- 🔔 Get real-time race updates
+- 🏃‍♂️ Engage with a community of passionate runners
+- ⚡ Fast and seamless event registration
+- 📱 Mobile-friendly, modern UI powered by **React & TailwindCSS**
+
+
+
 
   ---
 ## 🛠 Tech Stack
