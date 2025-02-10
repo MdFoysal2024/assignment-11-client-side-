@@ -40,7 +40,7 @@ Website Feature:
 </p>
 
 
-🚀 **Live Demo:** [Crowd Funding](https://inspiring-cendol-2005b3.netlify.app/)
+🚀 **Live Demo:** [Marathon Events](https://marathon-events-management.web.app/)
 
 
 
@@ -100,8 +100,8 @@ Ensure you have the following installed:
 ## 1. Clone the repository:
 
 ```
-git clone https://github.com/MdFoysal2024/crowd-funding.git
-cd crowd-funding
+git clone https://github.com/MdFoysal2024/assignment-11-client-side-.git
+cd marathon-events
 ```
 ## 2. Install dependencies:
 ```
@@ -163,11 +163,11 @@ This project is licensed under the **MIT License.**
 
 ## 🌍 Live Demo & Repository
 
-- **Live Site:** [Crowd Funding](https://inspiring-cendol-2005b3.netlify.app/)
-- **GitHub Repository:** [GitHub Link](https://github.com/MdFoysal2024/assignment-10-client-side)
+- **Live Site:** [Marathon Events](https://marathon-events-management.web.app/)
+- **GitHub Repository:** [GitHub Link](https://github.com/MdFoysal2024/assignment-11-client-side-)
 
 ---
 
-**🔥 Ready to launch your campaign? Start today and fund your dreams! 🚀**
+**🔥 Ready to Marathon Events? Start today and join with us! 🚀**
 
 
