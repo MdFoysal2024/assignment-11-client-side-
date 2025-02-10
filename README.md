@@ -1,23 +1,4 @@
-Website Name: Marathon Event Project.
 
-Project Live site URL: 
-
-* FireBase Hosting URL: https://marathon-events-management.web.app/
-
-
-Website Feature:
-* Home Page
-* Header Section
-* Navigation Menu
-* Banner/Carousel Section
-* Dynamic Card Section
-* Footer Section
-* CRUD Operation Functionality
-* Responsive Design
-* Firebase Authentication
-* JWT Authentication
-* Used Many React npm packages
-* like react-datepicker, mamba Ui, daisyui, react framer motion etc.
 
 
  <a href="https://inspiring-cendol-2005b3.netlify.app/" target="_blank">
@@ -46,7 +27,7 @@ Join us and take the next step in your running journey!
 
 ## 📖 Table of Contents
 - [Features](#features)
-- [Tech Stack](#tech-stack)
+- [Dependencies](#Dependencies)
 - [Installation](#Installation)
 - [Usage](#Usage)
 - [Configuration](#Configuration)
@@ -67,29 +48,32 @@ Join us and take the next step in your running journey!
 
 
   ---
-## 🛠 Tech Stack
+  
+## 📦 Dependencies
+
 The project is built with:
 
-## 1. Frontend:
-
 - **React 18.3.1** 
-- **React Router 7.0.2**
-- **TailwindCSS 3.4.16**
-- **DaisyUI 4.12.14**
-- **Typewriter Effects & Animations**
+- **React 18** – Modern UI framework
+- **Vite** – Fast development and build tool
+- **Tailwind CSS & DaisyUI** – For styling
+- **React Router** – Navigation and routing
+- **Axios** – API requests
+- **Firebase** – Authentication & data management
+- **Framer Motion** – Animations
+- **SweetAlert2** – Beautiful alerts and modals
+- **Swiper** – Interactive sliders
+  
+For a full list of dependencies, refer to package.json.
 
-## 2. State Management & Utilities:
 
-- **Firebase 11.0.2**
-- **LocalForage 1.10.0**
-- **Match Sorter 8.0.0**
-- **SweetAlert2 11.14.5**
 
-## 3. Development Tools:
 
-- **Vite 6.0.1**
-- **ESLint & Prettier**
-- **PostCSS & Autoprefixer** 
+
+
+
+
+
 
 
 ## 🚀 Installation
