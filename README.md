@@ -30,14 +30,14 @@ Website Feature:
 
 </p>
 
-**📢Crowd funding** is a dynamic online platform designed to help individuals, startups, and organizations raise funds for their projects, causes, or business ventures. Whether you're an entrepreneur launching a new 
- product, an artist seeking financial backing, or a nonprofit organization supporting a charitable cause, Crowd Funding provides the tools to connect with a global community of supporters.
 
 
-<p>
- With user-friendly campaign creation, secure payment processing, and social sharing capabilities, Crowd Funding makes it easy to reach potential backers and turn your vision into reality. Join today and start 
- funding your dreams!
-</p>
+**🏃‍♂️Marathon Events** is a premier online platform dedicated to organizing and promoting marathon races worldwide. Whether you're a professional athlete, a fitness enthusiast, or a first-time runner, our platform connects you with exciting running events in your city and beyond.
+
+Discover upcoming marathons, register for races, track your progress, and engage with a community of passionate runners. With seamless event registration, training tips, and real-time race updates, Marathon Events is your go-to destination for all things running.
+
+Join us and take the next step in your running journey!
+
 
 
 🚀 **Live Demo:** [Marathon Events](https://marathon-events-management.web.app/)
