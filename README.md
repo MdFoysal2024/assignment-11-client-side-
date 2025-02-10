@@ -130,11 +130,11 @@ VITE_appId=your_app_id
 
 ## 🎮 Usage
 
-```
+
 - Open http://localhost:5173/ in your browser.
 - Register for an account and browse upcoming marathon events.
 - Track progress, get race updates, and connect with other runners.
-```
+
 ---
 
 ## 📜 Scripts
