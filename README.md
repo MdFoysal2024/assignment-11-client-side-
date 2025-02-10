@@ -1,6 +1,6 @@
 
 
- <a href="https://inspiring-cendol-2005b3.netlify.app/" target="_blank">
+ <a href="https://marathon-events-management.web.app/" target="_blank">
      <img height="480" src="https://i.ibb.co.com/nMgFm3kZ/Capture-PNG11.png"  />
   </a>
 
@@ -117,13 +117,13 @@ VITE_appId=your_app_id
 
 ## 🤝 Contributing
 Contributions are welcome! If you'd like to contribute:
-```
-1. Fork the repository.
-2. Create a feature branch (git checkout -b feature-branch).
-3. Commit your changes (git commit -m "Add new feature").
-4. Push to your branch (git push origin feature-branch).
-5. Open a pull request.
-```
+
+- Fork the repository.
+- Create a feature branch (git checkout -b feature-branch).
+- Commit your changes (git commit -m "Add new feature").
+- Push to your branch (git push origin feature-branch).
+- Open a pull request.
+
 
 ## 📄 License
 This project is licensed under the **MIT License.**
