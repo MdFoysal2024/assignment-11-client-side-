@@ -1,16 +1,12 @@
 
 
-
  <a href="https://inspiring-cendol-2005b3.netlify.app/" target="_blank">
      <img height="480" src="https://i.ibb.co.com/nMgFm3kZ/Capture-PNG11.png"  />
   </a>
 
-
 <p>
 
-
 </p>
-
 
 
 **🏃‍♂️ Marathon Events** is a premier online platform dedicated to organizing and promoting marathon races worldwide. Whether you're a professional athlete, a fitness enthusiast, or a first-time runner, our platform connects you with exciting running events in your city and beyond.
@@ -20,9 +16,7 @@ Discover upcoming marathons, register for races, track your progress, and engage
 Join us and take the next step in your running journey!
 
 
-
 🚀 **Live Demo:** [Marathon Events](https://marathon-events-management.web.app/)
-
 
 
 ## 📖 Table of Contents
@@ -66,16 +60,6 @@ The project is built with:
   
 For a full list of dependencies, refer to package.json.
 
-
-
-
-
-
-
-
-
-
-
 ## 🚀 Installation
 
 **Prerequisites**
@@ -113,7 +97,6 @@ VITE_appId=your_app_id
 ```
 
 ## 🎮 Usage
-
 
 - Open http://localhost:5173/ in your browser.
 - Register for an account and browse upcoming marathon events.
